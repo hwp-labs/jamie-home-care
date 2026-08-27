@@ -1,0 +1,21 @@
+{
+  "git": {
+    "deploymentEnabled": {
+      "main": true,
+      "*": false
+    }
+  },
+  "redirects": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "dashboard.jamiehomecare.ca"
+        }
+      ],
+      "destination": "https://jamiehomecare.ca/dashboard",
+      "permanent": true
+    }
+  ]
+}
