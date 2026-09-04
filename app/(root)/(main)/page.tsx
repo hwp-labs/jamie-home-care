@@ -1,11 +1,10 @@
-// export const metadata = {
-//   title: "Home",
-// };
+import { Banner } from "@/components/organisms/banner";
 
 export default function HomePage() {
   return (
     <div className="debug h-screen">
-     
+      <Banner title="Home" />
+
       {/* <div className="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
         <div>
           <h1 className="font-medium">Project ready!</h1>
