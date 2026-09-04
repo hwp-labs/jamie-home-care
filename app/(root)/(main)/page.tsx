@@ -1,9 +1,9 @@
-import { Banner } from "@/components/organisms/banner";
+import { Hero } from "@/components/molecules/hero";
 
 export default function HomePage() {
   return (
-    <div className="debug h-screen">
-      <Banner title="Home" />
+    <div className="h-screen">
+      <Hero />
 
       {/* <div className="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
         <div>

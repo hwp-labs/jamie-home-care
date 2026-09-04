@@ -12,4 +12,10 @@
   .flex-col {
     @apply flex flex-col;
   }
+  .flex-col-sx {
+    @apply flex flex-col items-start;
+  }
+  .flex-col-xc {
+    @apply flex flex-col justify-center;
+  }
 }

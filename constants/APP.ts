@@ -9,4 +9,10 @@ export const APP = {
     orange: "#d24e38",
     maroon: "#690b1d",
   },
-} as const
+  website: "https://jamiehomecare.ca",
+  domain: "jamiehomecare.ca",
+  email: "info@jamiehomecare.ca",
+  tel: "+880-1911623458",
+  address: "East Shibgonj, Sylhet, 3100",
+  workHours: "Monday - Sunday 10.00 - 17.00",
+} as const;
