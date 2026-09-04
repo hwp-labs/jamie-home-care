@@ -1,6 +1,5 @@
 ![alt text](./public/wordmark.png)
 
-
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.x-007ACC.svg)
 ![React](https://img.shields.io/badge/React-19.x-61DAFB.svg)
 ![Next](https://img.shields.io/badge/Next-16.x-black.svg)

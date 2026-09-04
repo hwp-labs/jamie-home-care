@@ -1,0 +1,15 @@
+@layer components {
+  .flex-cx {
+    @apply flex items-center;
+  }
+  .flex-cc {
+    @apply flex items-center justify-center;
+  }
+  .flex-cb {
+    @apply flex items-center justify-between;
+  }
+  /* /////////////////////////////////////// */
+  .flex-col {
+    @apply flex flex-col;
+  }
+}

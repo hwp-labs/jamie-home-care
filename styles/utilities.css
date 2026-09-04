@@ -1,0 +1,16 @@
+@utility container {
+  width: 100%;              /* full width on mobile */
+  margin-inline: auto;     /* center once it has a max-width */
+  padding-inline: 1rem;    /* side gutters on small screens */
+  max-width: 80rem;        /* 1280px cap on large screens */
+
+  @media (width >= 48rem) {
+    padding-inline: 2rem;
+  }
+}
+
+@layer components {
+  .debug {
+    @apply border-red-500 border;
+  }
+}

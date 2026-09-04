@@ -3,6 +3,7 @@ export const APP = {
   shortName: "Jamie",
   slug: "jamie-come-care",
   title: "Care You Can Trust!",
+  titleLong: "Jamie Home Care - Care You Can Trust!",
   colors: {
     cream: "#f6ece2",
     orange: "#d24e38",
