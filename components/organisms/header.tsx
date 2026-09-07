@@ -8,7 +8,7 @@ import { APP } from "@/constants/APP";
 
 export const Header = () => (
   <header className="flex-cc h-12 bg-primary text-sm text-primary-foreground">
-    <div className="flex-cb container">
+    <div className="flex-cb app-container">
       <ul className="flex-cx gap-2">
         <li>{APP.tel}</li>
         <li>|</li>

@@ -2,8 +2,7 @@
 
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-//
-import { Button, buttonVariants } from "@/components/ui/button";
+import { AppButton } from "../atoms/app-button";
 
 const slides = [
   {
@@ -38,19 +37,19 @@ export const Hero = () => {
       style={{ backgroundImage: `url(/images/banner.jpg)` }}
     >
       <div className="absolute inset-0 bg-black/55" />
-      <div className="debug_ flex-col-xc _min-h-[440px] relative container">
+      <div className="debug_ flex-col-xc _min-h-[440px] relative app-container">
         <div className="flex-col-sx max-w-1/2 gap-4">
-          <h1 className="font-serif text-[84px] leading-tight font-medium text-primary-foreground">
+          <h1 className="font-serif text-[84px] leading-[100px] font-medium text-card">
             {slide.title}
           </h1>
           <p className="text-[32px] text-muted">{slide.description}</p>
           <div className="flex-cx gap-4">
-            <Button className="h-[48px] bg-accent px-8 text-accent-foreground">
+            <AppButton variant="accent">
               Our Services
-            </Button>
-            <Button className="h-[48px] bg-accent-foreground px-8 text-accent">
+            </AppButton>
+            <AppButton variant="accent" invert>
               Book Appointment
-            </Button>
+            </AppButton>
           </div>
         </div>
       </div>

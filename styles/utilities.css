@@ -1,11 +1,13 @@
-@utility container {
-  width: 100%;              /* full width on mobile */
-  margin-inline: auto;     /* center once it has a max-width */
-  max-width: 80rem;        /* 1280px cap on large screens */
-}
-
 @layer components {
   .debug {
-    @apply border-red-500 border;
+    @apply border border-red-500;
+  }
+
+  .app-container {
+    @apply w-full max-w-[1280px] min-inline-auto;
+  }
+
+  .app-section {
+    @apply flex flex-col items-center justify-center min-h-[640px] gap-5;
   }
 }

@@ -1,18 +1,12 @@
 import Link from "next/link";
-import { Button } from "../ui/button";
-import { APP } from "@/constants/APP";
 import { PATH } from "@/constants/PATH";
+import { Logo } from "../logo";
+import { AppButton } from "../atoms/app-button";
 
 export const Nav = () => (
-  <section className="flex-cc h-24 bg-card">
-    <div className="flex-cb container">
-      <figure className="flex-cx gap-3">
-        <img src="/android-chrome-192x192.png" alt="" className="size-[70px]" />
-        <figcaption>
-          <h1 className="text-2xl font-bold">{APP.name}</h1>
-          <p className="text-sm_ -mt-1 font-medium text-accent">{APP.title}</p>
-        </figcaption>
-      </figure>
+  <section className="flex-cc h-24 bg-card_">
+    <div className="flex-cb app-container">
+      <Logo />
       <div className="flex-cb gap-6">
         <nav className="flex-cx gap-5">
           {[
@@ -28,9 +22,7 @@ export const Nav = () => (
             </Link>
           ))}
         </nav>
-        <Button className="h-[44px] px-6">
-          Book Appointment
-        </Button>
+        <AppButton>Book Appointment</AppButton>
       </div>
     </div>
   </section>
