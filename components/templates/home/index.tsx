@@ -1,11 +1,11 @@
-import { colors } from "../colors";
+import { colors } from "../utils";
 
 export default function HomePageTemplate() {
   return (
     <div
       className="antialiased"
       style={{
-        fontFamily: "'Work Sans', sans-serif",
+        // fontFamily: "'Work Sans', sans-serif",
         background: colors.cream,
         color: colors.ink,
       }}
@@ -19,10 +19,55 @@ export default function HomePageTemplate() {
       `}</style>
 
       {/* Topbar */}
-  
+      <div
+        className="hidden items-center justify-between px-8 py-2 text-xs md:flex"
+        style={{ background: colors.tealDeep, color: colors.creamDim }}
+      >
+        <div className="flex gap-6">
+          <span>+880 1912 345 678</span>
+          <span>Mon – Sunday, 9:00 – 18:00</span>
+        </div>
+        <div className="flex gap-4">
+          <span>18 Willow Lane, Sylhet</span>
+        </div>
+      </div>
 
       {/* Header */}
-   
+      <header
+        className="flex items-center justify-between px-6 py-5 md:px-16"
+        style={{ background: colors.cream }}
+      >
+        <div
+          className="font-display text-2xl"
+          style={{ color: colors.tealDeep }}
+        >
+          Willow <span style={{ color: colors.coral }}>Home Care</span>
+        </div>
+        <nav
+          className="hidden gap-8 text-sm font-medium md:flex"
+          style={{ color: colors.ink }}
+        >
+          <a
+            href="#"
+            className="border-b-2"
+            style={{ borderColor: colors.coral }}
+          >
+            Home
+          </a>
+          <a href="#services">Services</a>
+          <a href="#team">Our Team</a>
+          <a href="#events">Events</a>
+          <a href="#contact">FAQs</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a
+          href="#contact"
+          className="hidden rounded-full px-5 py-2.5 text-sm font-semibold text-white md:inline-block"
+          style={{ background: colors.coral }}
+        >
+          Book a visit
+        </a>
+      </header>
 
       {/* HERO */}
       <section

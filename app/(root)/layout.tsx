@@ -1,17 +1,19 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Work_Sans, Fraunces } from 'next/font/google';
 
 import "@/styles/globals.css";
 import { cn } from "@/lib/utils";
 import { Metadata } from "next";
 import { APP } from "@/constants/APP";
 
-const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
-
-const fontMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
+const workSans = Work_Sans({
+  subsets: ['latin'],
+  variable: '--font-work-sans',
 });
 
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  variable: '--font-fraunces',
+});
 export const metadata: Metadata = {
   title: {
     default: APP.titleLong,
@@ -30,9 +32,8 @@ export default function RootLayout({
       suppressHydrationWarning
       className={cn(
         "antialiased",
-        fontMono.variable,
-        "font-sans",
-        geist.variable,
+        workSans.variable,
+        fraunces.variable,
       )}
     >
       <body>{children}</body>

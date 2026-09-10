@@ -12,7 +12,7 @@ export const AppButton = ({ children, variant = "primary", invert }: Props) => {
     <Button
       variant="ghost"
       className={clsx(
-        "h-[48px] px-8 hover:bg-foreground/90! hover:text-background/90!",
+        "h-[48px] px-8 hover:bg-foreground/90! hover:text-background/90! rounded-full",
         {
           "bg-primary text-primary-foreground!": variant === "primary",
           "bg-primary-foreground text-primary!":

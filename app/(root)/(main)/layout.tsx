@@ -1,5 +1,5 @@
+import { Ribbon } from "@/components/organisms/ribbon";
 import { Header } from "@/components/organisms/header";
-import { Nav } from "@/components/organisms/nav";
 
 export default function MainLayout({
   children,
@@ -8,8 +8,8 @@ export default function MainLayout({
 }>) {
   return (
     <>
+      <Ribbon />
       <Header />
-      <Nav />
       {children}
     </>
   );

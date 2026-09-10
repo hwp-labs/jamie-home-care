@@ -8,6 +8,6 @@
   }
 
   .app-section {
-    @apply flex flex-col items-center justify-center min-h-[640px] gap-5;
+    @apply min-h-[640px];
   }
 }

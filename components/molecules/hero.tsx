@@ -1,96 +1,45 @@
-"use client";
-
-import { useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import { AppButton } from "../atoms/app-button";
-
-const slides = [
-  {
-    title: "We provide compassionate care for",
-    description:
-      "A warm, attentive home where families trust us with what matters most.",
-    cta: { label: "Our Service", ctaHref: "/services" },
-    image: "/images/banner.jpg",
-  },
-  {
-    title: "Everyday support, delivered with",
-    description:
-      "From daily routines to companionship, our team is there when it counts.",
-    ctaLabel: "Meet our caregivers",
-    ctaHref: "/about",
-    image: "/images/banner.jpg",
-    imageAlt: "A caregiver and senior sharing a conversation",
-  },
-];
+import { APP } from "@/constants/APP";
 
 export const Hero = () => {
-  const [active, setActive] = useState(0);
-  const slide = slides[active];
-
-  const handlePrev = () =>
-    setActive((i) => (i - 1 + slides.length) % slides.length);
-  const handleNext = () => setActive((i) => (i + 1) % slides.length);
-  //
   return (
-    <section
-      className="flex-cc relative min-h-[calc(100vh-200px)] overflow-hidden bg-contain bg-center"
-      style={{ backgroundImage: `url(/images/banner.jpg)` }}
-    >
-      <div className="absolute inset-0 bg-black/55" />
-      <div className="debug_ flex-col-xc _min-h-[440px] relative app-container">
-        <div className="flex-col-sx max-w-1/2 gap-4">
-          <h1 className="font-serif text-[84px] leading-[100px] font-medium text-card">
-            {slide.title}
-          </h1>
-          <p className="text-[32px] text-muted">{slide.description}</p>
-          <div className="flex-cx gap-4">
-            <AppButton variant="accent">
-              Our Services
-            </AppButton>
-            <AppButton variant="accent" invert>
-              Book Appointment
-            </AppButton>
-          </div>
-        </div>
+    <section className="flex-cc bg-foreground text-background">
+      <div className="app-container app-section grid-2">
+        {renderLeftContent}
+        {renderRightContent}
       </div>
-      {renderControls(handlePrev, handleNext)}
-      {renderIndicator(active, setActive)}
     </section>
   );
 };
 
-const renderControls = (handlePrev: () => void, handleNext: () => void) => (
-  <>
-    <button
-      onClick={handlePrev}
-      title="Previous"
-      className="flex-cc absolute top-1/2 left-8 z-20 size-[40px] cursor-pointer rounded-full bg-primary-foreground text-primary transition hover:bg-primary hover:text-primary-foreground"
-    >
-      <ChevronLeft size={32} strokeWidth={3} />
-    </button>
-    <button
-      onClick={handleNext}
-      title="Next"
-      className="flex-cc absolute top-1/2 right-8 z-20 size-[40px] cursor-pointer rounded-full bg-primary-foreground text-primary transition hover:bg-primary hover:text-primary-foreground"
-    >
-      <ChevronRight size={32} strokeWidth={3} />
-    </button>
-  </>
+const renderLeftContent = (
+  <div className="debug_ flex-col-sc p-16">
+    <h1 className="font-heading text-4xl leading-tight md:text-5xl">
+      {APP.title}
+    </h1>
+    <p className="mt-6 max-w-md leading-relaxed text-muted">
+      Trained caregivers, warm companionship, and round-the-clock attention — so
+      every senior in our care feels at home, not just housed.
+    </p>
+    <div className="flex-cx gap-4 mt-8">
+      <AppButton variant="accent">Our Services</AppButton>
+      <AppButton variant="accent" invert>Book Appointment</AppButton>
+    </div>
+  </div>
 );
 
-const renderIndicator = (
-  active: number,
-  handleClick: (indx: number) => void,
-) => (
-  <div className="absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 gap-2">
-    {slides.map((_, i) => (
-      <button
-        key={i}
-        onClick={() => handleClick(i)}
-        className={`h-2 rounded-full transition-all ${
-          i === active ? "w-6 bg-accent" : "w-2 bg-primary-foreground"
-        }`}
-      />
-    ))}
+const renderRightContent = (
+  <div className="relative">
+    <img
+      src="/images/banner.jpg"
+      className="h-full w-full object-cover"
+      alt=""
+    />
+    <div
+      className="absolute inset-0"
+      style={{
+        background: `linear-gradient(90deg, var(--foreground) 0%, rgba(44,86,82,0) 35%)`,
+      }}
+    />
   </div>
 );

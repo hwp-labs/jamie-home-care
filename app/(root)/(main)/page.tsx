@@ -5,13 +5,11 @@ import { APP } from "@/constants/APP";
 import { HomeIcon } from "lucide-react";
 
 export default function HomePage() {
-  return <HomePageTemplate />;
-  
   return (
     <div className="h-screen_">
       <Hero />
-      <SeniorCare />
-      <BeHappy />
+      {/* <SeniorCare />
+      <BeHappy /> */}
     </div>
   );
 }
