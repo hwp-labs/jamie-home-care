@@ -22,3 +22,8 @@ export const APP = {
     yt: "",
   },
 } as const;
+
+
+export const COPY = {
+  weProvide: "We provide support for seniors and individuals with disabilities",
+} as const;

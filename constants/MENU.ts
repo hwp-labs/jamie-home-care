@@ -8,3 +8,10 @@ export const MENU = [
   { path: PATH.faqs, label: "FAQs" },
   { path: PATH.contact, label: "Contact Us" },
 ];
+
+export const MENU_FOOTER = [
+  { path: PATH.services, label: "Our Services" },
+  { path: PATH.careers, label: "Careers" },
+  { path: PATH.faqs, label: "FAQs" },
+  { path: PATH.contact, label: "Contact Us" },
+];

@@ -48,13 +48,6 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-/*
-  JHC logo palette (exact, converted from source PNG):
-  cream  #f6ece2 -> oklch(0.948 0.017 67.6)
-  orange #d24e38 -> oklch(0.599 0.171 31.8)
-  maroon #690b1d -> oklch(0.337 0.125 18.2)
-*/
-
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);

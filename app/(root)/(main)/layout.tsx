@@ -1,5 +1,6 @@
 import { Ribbon } from "@/components/organisms/ribbon";
 import { Header } from "@/components/organisms/header";
+import { Footer } from "@/components/organisms/footer";
 
 export default function MainLayout({
   children,
@@ -11,6 +12,7 @@ export default function MainLayout({
       <Ribbon />
       <Header />
       {children}
+      <Footer />
     </>
   );
 }
