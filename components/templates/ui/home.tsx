@@ -1,11 +1,11 @@
 import { colors } from "../utils";
 
-export default function HomePageTemplate() {
+export const HomeTemplate = () => {
   return (
     <div
       className="antialiased"
       style={{
-        // fontFamily: "'Work Sans', sans-serif",
+        fontFamily: "'Work Sans', sans-serif",
         background: colors.cream,
         color: colors.ink,
       }}
@@ -603,4 +603,4 @@ export default function HomePageTemplate() {
       </footer>
     </div>
   );
-}
+};

@@ -18,12 +18,15 @@ const renderLeftContent = (
       {APP.title}
     </h1>
     <p className="mt-6 max-w-md leading-relaxed text-muted">
-      Trained caregivers, warm companionship, and round-the-clock attention — so
-      every senior in our care feels at home, not just housed.
+      We provide support for seniors and individuals with disabilities. Trained
+      caregivers, warm companionship, and round-the-clock attention — so every
+      senior in our care feels at home, not just housed.
     </p>
-    <div className="flex-cx gap-4 mt-8">
+    <div className="flex-cx mt-8 gap-4">
       <AppButton variant="accent">Our Services</AppButton>
-      <AppButton variant="accent" invert>Book Appointment</AppButton>
+      <AppButton variant="accent" invert>
+        Book Appointment
+      </AppButton>
     </div>
   </div>
 );

@@ -12,7 +12,13 @@ export const APP = {
   website: "https://jamiehomecare.ca",
   domain: "jamiehomecare.ca",
   email: "info@jamiehomecare.ca",
-  tel: "+880-1911623458",
-  address: "East Shibgonj, Sylhet, 3100",
-  workHours: "Monday - Sunday 10.00 - 17.00",
+  tel: "+1(548)577-4216",
+  address: "1289 Queens Boulevard, Kitchener, Ontario, CA",
+  workHours: "Monday - Sunday 9.00 - 17.00",
+  socials: {
+    fb: "https://facebook.com/profile.php?id=61594527770465",
+    ig: "",
+    x: "",
+    yt: "",
+  },
 } as const;

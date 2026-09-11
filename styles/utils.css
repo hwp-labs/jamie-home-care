@@ -10,4 +10,8 @@
   .app-section {
     @apply min-h-[640px];
   }
+
+  .app-section-sm {
+    @apply min-h-[480px];
+  }
 }

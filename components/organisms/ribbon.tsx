@@ -17,27 +17,40 @@ export const Ribbon = () => (
         <li>{APP.workHours}</li>
       </ul>
       <ul className="flex-cx gap-4">
-        <li className="flex-cc size-[24px] rounded-full bg-primary-foreground">
-          <a href="" title="Facebook">
-            <IconBrandFacebook className="size-[16px] text-primary" />
-          </a>
-        </li>
-        <li className="flex-cc size-[24px] rounded-full bg-primary-foreground">
-          <a href="" title="Instagram">
-            <IconBrandInstagram className="size-[16px] text-primary" />
-          </a>
-        </li>
-        <li className="flex-cc size-[24px] rounded-full bg-primary-foreground">
-          <a href="" title="Twitter">
-            <IconBrandTwitter className="size-[16px] text-primary" />
-          </a>
-        </li>
-        <li className="flex-cc size-[24px] rounded-full bg-primary-foreground">
-          <a href="" title="YouTube">
-            <IconBrandYoutube className="size-[16px] text-primary" />
-          </a>
-        </li>
+        {SOCIAL.map(({ Icon, ...item }, i) => (
+          <li
+            key={i}
+            className="flex-cc size-[24px] rounded-full bg-primary-foreground"
+          >
+            <a href={item.url} title={item.label} target="_blank">
+              <Icon className="size-[16px] text-primary" />
+            </a>
+          </li>
+        ))}
       </ul>
     </div>
   </header>
 );
+
+const SOCIAL = [
+  {
+    label: "Facebook",
+    url: APP.socials.fb,
+    Icon: IconBrandFacebook,
+  },
+  {
+    label: "Instagram",
+    url: APP.socials.ig,
+    Icon: IconBrandInstagram,
+  },
+  {
+    label: "Twitter",
+    url: APP.socials.x,
+    Icon: IconBrandTwitter,
+  },
+  {
+    label: "YouTube",
+    url: APP.socials.yt,
+    Icon: IconBrandYoutube,
+  },
+];

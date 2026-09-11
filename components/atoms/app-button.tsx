@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Button } from "../ui/button";
+import { Button } from "../shadcn/ui/button";
 import clsx from "clsx";
 
 interface Props extends PropsWithChildren {
