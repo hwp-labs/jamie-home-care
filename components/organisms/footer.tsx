@@ -1,44 +1,99 @@
-import { APP, COPY } from "@/constants/APP";
-import { MENU_FOOTER } from "@/constants/MENU";
+import Link from "next/link";
+import { Mail, MapPin, Phone } from "lucide-react";
 
-export const Footer = () => {
+const LINKS: ReadonlyArray<{ label: string; href: string }> = [
+  { label: "Our Services", href: "/services" },
+  { label: "Careers", href: "/careers" },
+  { label: "FAQs", href: "/faqs" },
+  { label: "Contact Us", href: "/contact-us" },
+];
+
+export function Footer() {
   return (
-    <footer className="bg-foreground text-sm text-white/70">
-      <div className="grid-3 app-container mx-auto gap-10 px-6 py-16 md:px-16">
+    <footer className="bg-brand-dark text-white">
+      <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 md:grid-cols-3">
         <div>
-          <div className="font-heading mb-3 text-xl text-white">{APP.name}</div>
-          <p className="max-w-xs leading-relaxed">{COPY.weProvide}.
-          <a className="underline underline-offset-2 ml-1">Learn more</a>
+          <h3 className="text-2xl font-extrabold">Jamie Home Care</h3>
+          <p className="mt-3 text-white/80">
+            We provide support for seniors and individuals with disabilities.
           </p>
-          <p className="mt-4 text-muted">{APP.address}</p>
-          <p className="mt-4 text-accent">{APP.email}</p>
+          <ul className="mt-5 space-y-2 text-white/90">
+            <li className="flex items-center gap-2">
+              <MapPin className="size-4" /> 1289 Queens Boulevard, Kitchener,
+              Ontario
+            </li>
+            <li className="flex items-center gap-2">
+              <Phone className="size-4" />
+              <a href="tel:+15485774216" className="hover:underline">
+                +1 (548) 577-4216
+              </a>
+            </li>
+            <li className="flex items-center gap-2">
+              <Mail className="size-4" />
+              <a
+                href="mailto:info@jamiehomecare.ca"
+                className="hover:underline"
+              >
+                info@jamiehomecare.ca
+              </a>
+            </li>
+          </ul>
         </div>
+
         <div>
-          <h4 className="mb-4 font-semibold text-white">Helpful links</h4>
-          <ul className="space-y-3.5">
-            {MENU_FOOTER.map((item, i) => (
-              <li key={i}>{item.label}</li>
+          <h4 className="text-lg font-bold">Helpful links</h4>
+          <ul className="mt-4 space-y-2">
+            {LINKS.map((l) => (
+              <li key={l.href}>
+                <Link
+                  href={l.href}
+                  className="text-white/80 hover:text-white hover:underline"
+                >
+                  {l.label}
+                </Link>
+              </li>
             ))}
           </ul>
         </div>
+
         <div>
-          <h4 className="mb-4 font-semibold text-white">Newsletter</h4>
-          <p className="mb-4">Stay up to date with our latest news.</p>
-          <div className="flex">
+          <h4 className="text-lg font-bold">Newsletter</h4>
+          <p className="mt-4 text-white/80">
+            Stay up to date with our latest news.
+          </p>
+          <form className="mt-4 flex gap-2">
+            <label htmlFor="newsletter-email" className="sr-only">
+              Email address
+            </label>
             <input
+              id="newsletter-email"
               type="email"
-              placeholder="Enter your email"
-              className="flex-1 rounded-l-lg bg-secondary px-4 py-2.5 text-foreground focus:outline-none"
+              required
+              placeholder="Your email"
+              className="w-full rounded-full px-5 py-3 text-ink"
             />
-            <button className="rounded-r-lg bg-accent px-5 font-semibold text-white">
+            <button
+              type="submit"
+              className="rounded-full bg-accent px-6 py-3 font-bold"
+            >
               Join
             </button>
-          </div>
+          </form>
         </div>
       </div>
-      <div className="border-t border-white/10 py-5 text-center">
-        © 2026 {APP.name}. All rights reserved.
+      <div className="border-t border-white/15 py-5 text-sm text-white/70">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-6 sm:flex-row">
+          <p>
+            © {new Date().getFullYear()} Jamie Home Care. All rights reserved.
+          </p>
+          <Link
+            href="/privacy-policy"
+            className="hover:text-white hover:underline"
+          >
+            Privacy Policy
+          </Link>
+        </div>
       </div>
     </footer>
   );
-};
+}

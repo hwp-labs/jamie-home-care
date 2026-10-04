@@ -1,48 +1,35 @@
-import { AppButton } from "../atoms/app-button";
-import { APP } from "@/constants/APP";
+import Link from "next/link";
+import type { ReactNode } from "react";
 
-export const Hero = () => {
+type PageHeroProps = {
+  title: string;
+  description?: ReactNode;
+  current: string;
+};
+
+/** Shared inner-page banner. Reused by Services, FAQs, Contact, Careers. */
+export function Hero({ title, description, current }: PageHeroProps) {
   return (
-    <section className="flex-cc bg-foreground text-background">
-      <div className="app-container app-section grid-2">
-        {renderLeftContent}
-        {renderRightContent}
+    <section className="bg-brand-dark text-white">
+      <div className="mx-auto max-w-7xl px-6 py-14 lg:py-20">
+        <nav aria-label="Breadcrumb" className="text-sm text-white/70">
+          <ol className="flex items-center gap-2">
+            <li>
+              <Link href="/" className="hover:text-white hover:underline">
+                Home
+              </Link>
+            </li>
+            <li aria-hidden>/</li>
+            <li aria-current="page" className="text-white">
+              {current}
+            </li>
+          </ol>
+        </nav>
+        <h1 className="mt-4 text-4xl font-bold sm:text-5xl">{title}</h1>
+        {description ? (
+          <p className="mt-4 max-w-2xl text-xl text-white/80">{description}</p>
+        ) : null}
       </div>
     </section>
   );
-};
-
-const renderLeftContent = (
-  <div className="debug_ flex-col-sc p-16">
-    <h1 className="font-heading text-4xl leading-tight md:text-5xl">
-      {APP.title}
-    </h1>
-    <p className="mt-6 max-w-md leading-relaxed text-muted">
-      We provide support for seniors and individuals with disabilities. Trained
-      caregivers, warm companionship, and round-the-clock attention — so every
-      senior in our care feels at home, not just housed.
-    </p>
-    <div className="flex-cx mt-8 gap-4">
-      <AppButton variant="accent">Our Services</AppButton>
-      <AppButton variant="accent" invert>
-        Book Appointment
-      </AppButton>
-    </div>
-  </div>
-);
-
-const renderRightContent = (
-  <div className="relative">
-    <img
-      src="/images/banner.jpg"
-      className="h-full w-full object-cover"
-      alt=""
-    />
-    <div
-      className="absolute inset-0"
-      style={{
-        background: `linear-gradient(90deg, var(--foreground) 0%, rgba(44,86,82,0) 35%)`,
-      }}
-    />
-  </div>
-);
+}
