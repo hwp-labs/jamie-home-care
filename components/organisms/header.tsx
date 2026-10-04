@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Clock, MapPin, Menu, Phone } from "lucide-react";
+import { APP } from "@/constants/APP";
 
 export const NAV_LINKS: ReadonlyArray<{ label: string; href: string }> = [
   { label: "Home", href: "/" },
@@ -17,11 +18,12 @@ export function Header() {
       <div className="hidden bg-brand-dark text-sm text-white md:block">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2">
           <div className="flex items-center gap-6">
-            <a href="tel:+15485774216" className="flex items-center gap-2 hover:underline">
-              <Phone className="size-4" /> +1 (548) 577-4216
+            <a href={APP.telHref} className="flex items-center gap-2 hover:underline">
+              <Phone className="size-4" /> {APP.tel}
             </a>
             <span className="flex items-center gap-2">
-              <MapPin className="size-4" /> 1289 Queens Boulevard, Kitchener, ON
+              <MapPin className="size-4" /> 
+              {APP.address}
             </span>
           </div>
           <span className="flex items-center gap-2">

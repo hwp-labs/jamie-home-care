@@ -12,8 +12,9 @@ export const APP = {
   website: "https://jamiehomecare.ca",
   domain: "jamiehomecare.ca",
   email: "info@jamiehomecare.ca",
-  tel: "+1(548)577-4216",
-  address: "1289 Queens Boulevard, Kitchener, Ontario, CA",
+  tel: "+1 (548) 577-4216",
+  telHref: "tel:+15485774216",
+  address: "152 Stamson street. N2E 4H2, Kitchener, Ontario, Canada.",
   workHours: "Monday - Sunday 9.00 - 17.00",
   socials: {
     fb: "https://facebook.com/profile.php?id=61594527770465",

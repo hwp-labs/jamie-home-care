@@ -1,5 +1,6 @@
 "use server";
 
+import { APP } from "@/constants/APP";
 import { saveContact } from "./save";
 
 type Field = "name" | "email" | "phone" | "message";
@@ -58,7 +59,7 @@ export async function submitContact(
   if (!result.ok) {
     return {
       status: "error",
-      message: "We could not send your message. Please try again or call +1 (548) 577-4216.",
+      message: `We could not send your message. Please try again or call ${APP.tel}.`,
       fieldErrors: {},
       values,
     };

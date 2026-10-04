@@ -20,6 +20,7 @@ export const metadata: Metadata = {
   title: "Our Services - Jamie Home Care",
   description:
     "Personal care, companionship, meal preparation, medication reminders and more for seniors and individuals with disabilities in Kitchener, Ontario.",
+  alternates: { canonical: "/services" },
 };
 
 type Service = {
@@ -33,49 +34,89 @@ const SERVICES: ReadonlyArray<Service> = [
   {
     title: "Personal care",
     summary: "Dignified, hands-on help with the routines of daily life.",
-    includes: ["Bathing and grooming", "Dressing assistance", "Mobility and transfers", "Toileting support"],
+    includes: [
+      "Bathing and grooming",
+      "Dressing assistance",
+      "Mobility and transfers",
+      "Toileting support",
+    ],
     icon: HandHeart,
   },
   {
     title: "Companionship",
     summary: "Friendly company that keeps minds and spirits active.",
-    includes: ["Conversation and games", "Walks and light activities", "Hobbies and reading", "Social outings"],
+    includes: [
+      "Conversation and games",
+      "Walks and light activities",
+      "Hobbies and reading",
+      "Social outings",
+    ],
     icon: Users,
   },
   {
     title: "Meal preparation",
     summary: "Nutritious, home-cooked meals shaped around each person.",
-    includes: ["Menu planning", "Special diet support", "Feeding assistance", "Kitchen clean-up"],
+    includes: [
+      "Menu planning",
+      "Special diet support",
+      "Feeding assistance",
+      "Kitchen clean-up",
+    ],
     icon: Utensils,
   },
   {
     title: "Medication reminders",
     summary: "Gentle prompts that keep medication on schedule.",
-    includes: ["Scheduled reminders", "Medication logs", "Refill reminders", "Updates to family"],
+    includes: [
+      "Scheduled reminders",
+      "Medication logs",
+      "Refill reminders",
+      "Updates to family",
+    ],
     icon: Pill,
   },
   {
     title: "Health monitoring",
     summary: "Attentive caregivers who notice changes early.",
-    includes: ["Daily wellness checks", "Mood and appetite notes", "Fall-risk awareness", "Reporting concerns"],
+    includes: [
+      "Daily wellness checks",
+      "Mood and appetite notes",
+      "Fall-risk awareness",
+      "Reporting concerns",
+    ],
     icon: Stethoscope,
   },
   {
     title: "Overnight care",
     summary: "A caregiver nearby through the night for peace of mind.",
-    includes: ["Night-time supervision", "Help with restroom trips", "Comfort and reassurance", "Morning handover"],
+    includes: [
+      "Night-time supervision",
+      "Help with restroom trips",
+      "Comfort and reassurance",
+      "Morning handover",
+    ],
     icon: Moon,
   },
   {
     title: "Disability support",
     summary: "Practical support that builds independence and confidence.",
-    includes: ["Daily living skills", "Accessible routines", "Community participation", "Family guidance"],
+    includes: [
+      "Daily living skills",
+      "Accessible routines",
+      "Community participation",
+      "Family guidance",
+    ],
     icon: Accessibility,
   },
   {
     title: "Care planning",
     summary: "A personal plan built with the person and their family.",
-    includes: ["Initial assessment", "Written care plan", "Regular reviews", "Plan updates as needs change"],
+    includes: [
+      "Initial assessment",
+      "Written care plan",
+      "Regular reviews",
+      "Plan updates as needs change",
+    ],
     icon: ClipboardList,
   },
 ];
@@ -100,9 +141,12 @@ export default function ServicesPage() {
       {/* Services */}
       <section className="mx-auto max-w-7xl px-6 py-16">
         <div className="max-w-2xl">
-          <h2 className="text-3xl font-bold text-brand-dark sm:text-4xl">How we can help</h2>
+          <h2 className="text-3xl font-bold text-brand-dark sm:text-4xl">
+            How we can help
+          </h2>
           <p className="mt-4 text-muted">
-            Every plan is different. We combine the services below to fit your loved one.
+            Every plan is different. We combine the services below to fit your
+            loved one.
           </p>
         </div>
 
@@ -121,7 +165,10 @@ export default function ServicesPage() {
                 <ul className="mt-4 grid gap-2 sm:grid-cols-2">
                   {includes.map((item) => (
                     <li key={item} className="flex items-start gap-2 text-base">
-                      <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-brand" aria-hidden />
+                      <CheckCircle2
+                        className="mt-0.5 size-5 shrink-0 text-brand"
+                        aria-hidden
+                      />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -137,10 +184,12 @@ export default function ServicesPage() {
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2">
           <div>
             <HeartPulse className="size-10 text-accent" aria-hidden />
-            <h2 className="mt-4 text-3xl font-bold text-brand-dark sm:text-4xl">Who we support</h2>
+            <h2 className="mt-4 text-3xl font-bold text-brand-dark sm:text-4xl">
+              Who we support
+            </h2>
             <p className="mt-4 max-w-xl text-muted">
-              Care is never one-size-fits-all. If your situation is not listed, talk to us and we
-              will tell you honestly whether we can help.
+              Care is never one-size-fits-all. If your situation is not listed,
+              talk to us and we will tell you honestly whether we can help.
             </p>
             <Link
               href="/contact-us"
@@ -151,8 +200,14 @@ export default function ServicesPage() {
           </div>
           <ul className="space-y-3">
             {WHO.map((w) => (
-              <li key={w} className="flex items-start gap-3 rounded-xl bg-white p-5 shadow-sm">
-                <CheckCircle2 className="mt-1 size-6 shrink-0 text-brand" aria-hidden />
+              <li
+                key={w}
+                className="flex items-start gap-3 rounded-xl bg-white p-5 shadow-sm"
+              >
+                <CheckCircle2
+                  className="mt-1 size-6 shrink-0 text-brand"
+                  aria-hidden
+                />
                 <span>{w}</span>
               </li>
             ))}

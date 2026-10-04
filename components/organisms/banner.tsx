@@ -1,3 +1,4 @@
+import { APP } from "@/constants/APP";
 import Link from "next/link";
 
 type Action = { label: string; href: string };
@@ -10,7 +11,7 @@ type BannerProps = {
 };
 
 const DEFAULT_PRIMARY: Action = { label: "Book Appointment", href: "/book-appointment" };
-const DEFAULT_SECONDARY: Action = { label: "Call +1 (548) 577-4216", href: "tel:+15485774216" };
+const DEFAULT_SECONDARY: Action = { label: `Call ${APP.tel}`, href: APP.telHref };
 
 function ActionLink({ action, className }: { action: Action; className: string }) {
   const isNative = action.href.startsWith("mailto:") || action.href.startsWith("tel:");

@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import { ChevronDown } from "lucide-react";
 import { Banner } from "@/components/organisms/banner";
 import { Hero } from "@/components/molecules/hero";
+import { APP } from "@/constants/APP";
 
 export const metadata: Metadata = {
   title: "FAQs - Jamie Home Care",
   description:
     "Answers to common questions about care services, staff, booking and getting started with Jamie Home Care in Kitchener, Ontario.",
+  alternates: { canonical: "/faqs" },
 };
 
 type Faq = { question: string; answer: string };
@@ -79,7 +81,7 @@ const GROUPS: ReadonlyArray<FaqGroup> = [
       {
         question: "What are your office hours?",
         answer:
-          "We are open Monday to Sunday, 9:00 to 17:00. You can reach us at +1 (548) 577-4216 or info@jamiehomecare.ca.",
+          `We are open Monday to Sunday, 9:00 to 17:00. You can reach us at ${APP.tel} or ${APP.email}.`,
       },
     ],
   },
@@ -113,7 +115,9 @@ export default function FaqsPage() {
         <div className="space-y-14">
           {GROUPS.map((group) => (
             <div key={group.heading}>
-              <h2 className="text-2xl font-bold text-brand-dark sm:text-3xl">{group.heading}</h2>
+              <h2 className="text-2xl font-bold text-brand-dark sm:text-3xl">
+                {group.heading}
+              </h2>
               <div className="mt-6 space-y-4">
                 {group.items.map((item) => (
                   <details

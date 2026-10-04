@@ -8,6 +8,7 @@ import {
   isRealDate,
 } from "./utils";
 import { saveAppointment } from "./save";
+import { APP } from "@/constants/APP";
 
 type Field =
   | "name"
@@ -118,7 +119,7 @@ export async function submitAppointment(
     return {
       status: "error",
       message:
-        "We could not book your appointment. Please try again or call +1 (548) 577-4216.",
+        `We could not book your appointment. Please try again or call ${APP.tel}.`,
       fieldErrors: {},
       values,
     };

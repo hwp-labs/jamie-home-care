@@ -47,13 +47,19 @@
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
   
-  --color-brand: #0f6b6b;
-  --color-brand-dark: #0a4d4d;
-  --color-brand-soft: #e3f1ef;
-  --color-accent: #e8913a;
-  --color-cream: #fbf8f3;
-  --color-ink: #1d2b2b;
-  --color-muted: #5b6b6b;
+/* Your palette */
+--color-cream: #f6ece2;
+--color-orange: #d24e38;
+--color-maroon: #690b1d;
+
+/* Semantic tokens used by the components */
+--color-brand-dark: var(--color-maroon);   /* header strip, footer, banners, headings */
+--color-brand: #8a1c33;                    /* icons, links, borders, outlines (lighter maroon) */
+--color-brand-soft: var(--color-cream);    /* section backgrounds */
+--color-accent: var(--color-orange);       /* buttons, step numbers */
+--color-surface: #fbf6f0;                  /* page background (lighter cream) */
+--color-ink: #2a1418;                      /* body text (warm near-black) */
+--color-muted: #5e4a4c;   
   --font-sans: var(--font-nunito);
 }
 

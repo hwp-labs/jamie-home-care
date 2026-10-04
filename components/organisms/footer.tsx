@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
+import { APP } from "@/constants/APP";
 
 const LINKS: ReadonlyArray<{ label: string; href: string }> = [
   { label: "Our Services", href: "/services" },
@@ -19,13 +20,13 @@ export function Footer() {
           </p>
           <ul className="mt-5 space-y-2 text-white/90">
             <li className="flex items-center gap-2">
-              <MapPin className="size-4" /> 1289 Queens Boulevard, Kitchener,
-              Ontario
+              <MapPin className="size-4" /> 
+              {APP.address}
             </li>
             <li className="flex items-center gap-2">
               <Phone className="size-4" />
-              <a href="tel:+15485774216" className="hover:underline">
-                +1 (548) 577-4216
+              <a href={APP.telHref} className="hover:underline">
+                {APP.tel}
               </a>
             </li>
             <li className="flex items-center gap-2">

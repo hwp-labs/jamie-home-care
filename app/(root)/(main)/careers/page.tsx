@@ -1,3 +1,4 @@
+import { APP } from "@/constants/APP";
 import type { Metadata } from "next";
 import {
   Briefcase,
@@ -17,9 +18,10 @@ export const metadata: Metadata = {
   title: "Careers - Jamie Home Care",
   description:
     "Join our caring team in Kitchener, Ontario. See open caregiver roles at Jamie Home Care and how to apply.",
+  alternates: { canonical: "/careers" },
 };
 
-const APPLY_EMAIL = "info@jamiehomecare.ca";
+const APPLY_EMAIL = APP.email;
 
 type Perk = { title: string; text: string; icon: LucideIcon };
 
@@ -226,7 +228,7 @@ export default function CareersPage() {
         title="Ready to join our team?"
         text={`Send your resume to ${APPLY_EMAIL} and tell us which role interests you.`}
         primary={{ label: "Email your resume", href: applyHref() }}
-        secondary={{ label: "Call us", href: "tel:+15485774216" }}
+        secondary={{ label: "Call us", href: APP.telHref }}
       />
     </>
   );

@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import "@/styles/globals.css";
 import { Header } from "@/components/organisms/header";
 import { Footer } from "@/components/organisms/footer";
+import { SITE_NAME, SITE_URL } from "@/constants/SITE";
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -12,9 +13,21 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Jamie Home Care - Care You Can Trust!",
   description:
-    "Support for seniors and individuals with disabilities in Kitchener, Ontario.",
+    "Trained caregivers, warm companionship and round-the-clock support for seniors and individuals with disabilities in Kitchener, Ontario.",
+  applicationName: SITE_NAME,
+  openGraph: {
+    type: "website",
+    siteName: SITE_NAME,
+    locale: "en_CA",
+    images: [{ url: "/images/banner.jpg", alt: "Jamie Home Care caregiver with a senior" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/images/banner.jpg"],
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
