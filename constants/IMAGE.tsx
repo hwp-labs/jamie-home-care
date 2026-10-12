@@ -23,4 +23,14 @@ export const IMAGE = {
       />
     ),
   },
+  About: (
+    <Image
+      src="/images/banner-3.jpg"
+      alt="Caregiver and senior sharing a conversation"
+      fill
+      priority
+      sizes="(min-width: 1024px) 50vw, 100vw"
+      className="object-cover"
+    />
+  ),
 };

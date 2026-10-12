@@ -2,55 +2,75 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  Eye,
+  Clock,
   HandHeart,
   HeartHandshake,
+  HeartPulse,
+  MapPin,
   Scale,
   ShieldCheck,
+  Smile,
   Sparkles,
+  Users,
   type LucideIcon,
 } from "lucide-react";
-import { Banner } from "@/components/organisms/banner";
 import { Hero } from "@/components/molecules/hero";
+import { Banner } from "@/components/organisms/banner";
+import { IMAGE } from "@/constants/IMAGE";
 
 export const metadata: Metadata = {
   title: "About Us - Jamie Home Care",
   description:
-    "Learn who we are, what we believe in, and how we care for seniors and individuals with disabilities in Kitchener, Ontario.",
+    "Compassionate, individualized home care for seniors and individuals with disabilities in Kitchener, Waterloo, Cambridge, and surrounding communities.",
   alternates: { canonical: "/about" },
 };
 
-type Value = { title: string; text: string; icon: LucideIcon };
+type Item = { title: string; text: string; icon: LucideIcon };
 
-const VALUES: ReadonlyArray<Value> = [
+const WHY_CHOOSE: ReadonlyArray<Item> = [
+  {
+    title: "Hands-On Expertise & Genuine Heart",
+    text: "Founded by experienced care professionals who understand daily hands-on care, we treat every client with the same tenderness and respect we would offer our own family.",
+    icon: HandHeart,
+  },
+  {
+    title: "Guilt-Free Relief for Families",
+    text: "We step in as your trusted partner so you can return to being a daughter, son, or family member instead of an exhausted full-time caregiver.",
+    icon: Users,
+  },
+  {
+    title: "Comprehensive Daily Support",
+    text: "Personal care, mechanical transfers, light housekeeping, meal preparation, and companionship from trained personal support workers.",
+    icon: HeartPulse,
+  },
+  {
+    title: "Local Community Commitment",
+    text: "Proudly serving Kitchener, Waterloo, Cambridge, and surrounding communities with quick intake, personalized care plans, and transparent communication.",
+    icon: MapPin,
+  },
+];
+
+const VALUES: ReadonlyArray<Item> = [
+  {
+    title: "Trust",
+    text: "We show up on time, communicate openly, and uphold the highest standards of professional safety and respect.",
+    icon: ShieldCheck,
+  },
   {
     title: "Dignity",
-    text: "Every person is treated with respect and keeps a voice in their own care.",
+    text: "We honor every client's personal preferences, routines, and autonomy during every task.",
     icon: Scale,
   },
   {
     title: "Compassion",
-    text: "We listen first, then act with patience and warmth.",
-    icon: HandHeart,
-  },
-  {
-    title: "Safety",
-    text: "Trained, vetted caregivers and clear routines keep everyone safe.",
-    icon: ShieldCheck,
-  },
-  {
-    title: "Family",
-    text: "We keep families informed and involved at every step.",
+    text: "We don't just complete tasks; we listen, build relationships, and bring warmth into every home we enter.",
     icon: HeartHandshake,
   },
-];
-
-const COMMITMENTS: ReadonlyArray<string> = [
-  "A personal care plan for every person",
-  "Caregivers who are certified and background-checked",
-  "Regular updates to family members",
-  "A clean, comfortable, home-like setting",
-  "Care that adapts as needs change",
+  {
+    title: "Peace of Mind",
+    text: "We lift the weight off family members' shoulders so they can rest knowing their loved one is in safe hands.",
+    icon: Smile,
+  },
 ];
 
 export default function AboutPage() {
@@ -58,43 +78,31 @@ export default function AboutPage() {
     <>
       <Hero
         current="About Us"
-        title="About Jamie Home Care"
-        description="Support for seniors and individuals with disabilities, delivered with warmth and respect."
+        title="Welcome to Jamie Home Care"
+        description="Care You Can Trust!"
       />
 
-      {/* Story */}
+      {/* Welcome */}
       <section className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-16 lg:grid-cols-2">
         <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-brand-soft shadow-lg">
-          <Image
-            src="/images/banner.jpg"
-            alt="Caregiver and senior sharing a conversation"
-            fill
-            priority
-            sizes="(min-width: 1024px) 50vw, 100vw"
-            className="object-cover"
-            loading="eager"
-          />
+          {IMAGE.About}
         </div>
         <div>
-          <h2 className="text-3xl font-bold text-brand-dark sm:text-4xl">
-            Care that feels like family, not a shift
-          </h2>
-          <div className="mt-6 space-y-4 text-muted">
-            <p>
-              Jamie Home Care provides support for seniors and individuals with
-              disabilities in Kitchener, Ontario. We believe everyone deserves
-              to feel at home, not just housed.
-            </p>
-            <p>
-              Our caregivers bring training, patience and genuine companionship
-              to each day, so families can rest knowing their loved one is in
-              good hands.
-            </p>
-            <p>
-              Placeholder copy: the client will supply the final story, founding
-              year and team details.
-            </p>
-          </div>
+          {/* <p className="font-semibold uppercase tracking-wide text-accent">
+            Welcome to Jamie Home Care
+          </p>
+          <h2 className="mt-3 text-3xl font-bold text-brand-dark sm:text-4xl">
+            Care You Can Trust
+          </h2> */}
+          <p className="text-muted_ mt-6 text-2xl leading-[40px]">
+            At Jamie Home Care, we believe that aging and receiving daily
+            support should never mean giving up independence, comfort, or
+            dignity. Based in the heart of the Kitchener-Waterloo-Cambridge
+            (KWC) region, we provide compassionate, individualized home care
+            services designed to support seniors and individuals with
+            disabilities right where they feel safest: in the comfort of their
+            own homes.
+          </p>
           <Link
             href="/contact-us"
             className="mt-8 inline-flex items-center rounded-full bg-brand px-8 py-4 font-semibold text-white transition hover:bg-brand-dark"
@@ -104,77 +112,62 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Mission and vision */}
+      {/* Mission */}
       <section className="bg-brand-soft py-16">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 md:grid-cols-2">
-          <article className="rounded-2xl bg-white p-10 shadow-sm">
-            <Sparkles className="size-10 text-accent" aria-hidden />
-            <h2 className="mt-5 text-2xl font-bold text-brand-dark">
-              Our mission
-            </h2>
-            <p className="mt-3 text-muted">
-              To give seniors and individuals with disabilities safe, dignified
-              and compassionate care in a place that feels like home.
-            </p>
-          </article>
-          <article className="rounded-2xl bg-white p-10 shadow-sm">
-            <Eye className="size-10 text-accent" aria-hidden />
-            <h2 className="mt-5 text-2xl font-bold text-brand-dark">
-              Our vision
-            </h2>
-            <p className="mt-3 text-muted">
-              A community where every person can age and live with comfort,
-              independence and connection.
-            </p>
-          </article>
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <Sparkles className="mx-auto size-10 text-accent" aria-hidden />
+          <h2 className="mt-5 text-3xl font-bold text-brand-dark sm:text-4xl">
+            Our Mission
+          </h2>
+          <p className="mt-4 text-lg text-muted">
+            To empower seniors and individuals with disabilities to live rich,
+            dignified, and independent lives at home, while giving families and
+            primary caregivers complete peace of mind, free from stress,
+            burnout, and guilt.
+          </p>
         </div>
       </section>
 
-      {/* Values */}
+      {/* Why choose us */}
       <section className="mx-auto max-w-7xl px-6 py-16">
         <div className="max-w-2xl">
           <h2 className="text-3xl font-bold text-brand-dark sm:text-4xl">
-            What we stand for
+            Why Choose Jamie Home Care?
           </h2>
-          <p className="mt-4 text-muted">
-            The principles behind every visit and every decision.
-          </p>
         </div>
-        <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {VALUES.map(({ title, text, icon: Icon }) => (
-            <article key={title} className="border-l-4 border-brand pl-6">
-              <Icon className="size-9 text-brand" aria-hidden />
-              <h3 className="mt-4 text-xl font-semibold">{title}</h3>
-              <p className="mt-2 text-muted">{text}</p>
+        <div className="mt-10 grid gap-6 md:grid-cols-2">
+          {WHY_CHOOSE.map(({ title, text, icon: Icon }) => (
+            <article
+              key={title}
+              className="flex gap-5 rounded-2xl bg-white p-8 shadow-sm ring-1 ring-black/5"
+            >
+              <span className="flex size-14 shrink-0 items-center justify-center rounded-full bg-brand-soft">
+                <Icon className="size-7 text-brand" aria-hidden />
+              </span>
+              <div>
+                <h3 className="text-xl font-semibold">{title}</h3>
+                <p className="mt-2 text-muted">{text}</p>
+              </div>
             </article>
           ))}
         </div>
       </section>
 
-      {/* Commitments */}
+      {/* Core values */}
       <section className="bg-white py-16">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2">
-          <div>
-            <h2 className="text-3xl font-bold text-brand-dark sm:text-4xl">
-              Our commitment to you
-            </h2>
-            <p className="mt-4 max-w-xl text-muted">
-              When you choose Jamie Home Care, this is what you can count on.
-            </p>
-          </div>
-          <ul className="space-y-4">
-            {COMMITMENTS.map((c, i) => (
-              <li
-                key={c}
-                className="bg-surface flex items-start gap-4 rounded-xl p-5 ring-1 ring-black/5"
-              >
-                <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-brand font-bold text-white">
-                  {i + 1}
-                </span>
-                <span className="pt-1">{c}</span>
-              </li>
+        <div className="mx-auto max-w-7xl px-6">
+          <h2 className="text-3xl font-bold text-brand-dark sm:text-4xl">
+            Our Core Values
+          </h2>
+          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {VALUES.map(({ title, text, icon: Icon }) => (
+              <article key={title} className="border-l-4 border-brand pl-6">
+                <Icon className="size-9 text-brand" aria-hidden />
+                <h3 className="mt-4 text-xl font-semibold">{title}</h3>
+                <p className="mt-2 text-muted">{text}</p>
+              </article>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
 
