@@ -16,6 +16,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { APP } from "@/constants/APP";
+import { IMAGE } from "@/constants/IMAGE";
 
 export const metadata: Metadata = {
   description:
@@ -131,14 +132,7 @@ export default function HomePage() {
           </div>
 
           <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-xl">
-            <Image
-              src="/images/banner.jpg"
-              alt="A caregiver sharing a warm moment with a senior"
-              fill
-              priority
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover"
-            />
+            {IMAGE.Home.Hero}
           </div>
         </div>
       </section>
@@ -208,13 +202,7 @@ export default function HomePage() {
       {/* Why us */}
       <section className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-16 lg:grid-cols-2">
         <div className="relative aspect-square overflow-hidden rounded-3xl bg-brand-soft shadow-lg">
-          <Image
-            src="/images/banner.jpg"
-            alt="Residents enjoying time together at home"
-            fill
-            sizes="(min-width: 1024px) 50vw, 100vw"
-            className="object-cover"
-          />
+          {IMAGE.Home.AboutUs}
         </div>
         <div>
           <p className="font-bold tracking-widest text-brand uppercase">

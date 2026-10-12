@@ -11,7 +11,7 @@ const LINKS: ReadonlyArray<{ label: string; href: string }> = [
 
 export function Footer() {
   return (
-    <footer className="bg-brand-dark text-white">
+    <footer className="bg-black text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 md:grid-cols-3">
         <div>
           <h3 className="text-2xl font-extrabold">Jamie Home Care</h3>
@@ -62,7 +62,7 @@ export function Footer() {
           <p className="mt-4 text-white/80">
             Stay up to date with our latest news.
           </p>
-          <form className="mt-4 flex gap-2">
+          <form className="mt-4 flex gap-2 ">
             <label htmlFor="newsletter-email" className="sr-only">
               Email address
             </label>
@@ -71,7 +71,7 @@ export function Footer() {
               type="email"
               required
               placeholder="Your email"
-              className="w-full rounded-full px-5 py-3 text-ink"
+              className="w-full rounded-full px-5 py-3 text-ink bg-white"
             />
             <button
               type="submit"
