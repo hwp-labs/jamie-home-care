@@ -12,6 +12,9 @@ import {
   Smile,
   Sparkles,
   Users,
+  Accessibility,
+UserCheck,
+CalendarClock,
   type LucideIcon,
 } from "lucide-react";
 import { Hero } from "@/components/molecules/hero";
@@ -29,31 +32,41 @@ type Item = { title: string; text: string; icon: LucideIcon };
 
 const WHY_CHOOSE: ReadonlyArray<Item> = [
   {
-    title: "Hands-On Expertise & Genuine Heart",
-    text: "Founded by experienced care professionals who understand daily hands-on care, we treat every client with the same tenderness and respect we would offer our own family.",
-    icon: HandHeart,
-  },
-  {
     title: "Guilt-Free Relief for Families",
     text: "We step in as your trusted partner so you can return to being a daughter, son, or family member instead of an exhausted full-time caregiver.",
     icon: Users,
   },
   {
-    title: "Comprehensive Daily Support",
-    text: "Personal care, mechanical transfers, light housekeeping, meal preparation, and companionship from trained personal support workers.",
+    title: "Hands-On Expertise & Compassionate Care",
+    text: "Experienced care professionals who understand daily hands-on care. We treat every client with compassionate and respect.",
+    icon: HandHeart,
+  },
+  {
+    title: "Personalized Care",
+    text: "Support is tailored to the client’s routines, abilities and personal goals.",
     icon: HeartPulse,
   },
   {
-    title: "Local Community Commitment",
-    text: "Proudly serving Kitchener, Waterloo, Cambridge, and surrounding communities with quick intake, personalized care plans, and transparent communication.",
-    icon: MapPin,
+    title: "Dignity and Independence",
+    text: "We encourage clients to do what they can while providing assistance where needed.",
+    icon: Accessibility,
+  },
+  {
+    title: "Consistent & Reliable Caregivers",
+    text: "Familiar caregivers help clients feel comfortable, secure and heard.",
+    icon: UserCheck,
+  },
+  {
+    title: "Flexible Support Options",
+    text: "Our services can be adjusted as the client’s needs, routines or circumstances change.",
+    icon: CalendarClock,
   },
 ];
 
 const VALUES: ReadonlyArray<Item> = [
   {
     title: "Trust",
-    text: "We show up on time, communicate openly, and uphold the highest standards of professional safety and respect.",
+    text: "We show up on time, communicate openly, and uphold the highest standards of professional safety.",
     icon: ShieldCheck,
   },
   {
@@ -63,7 +76,7 @@ const VALUES: ReadonlyArray<Item> = [
   },
   {
     title: "Compassion",
-    text: "We don't just complete tasks; we listen, build relationships, and bring warmth into every home we enter.",
+    text: "We don't just complete tasks; we listen, build relationships, and bring warmth into every home.",
     icon: HeartHandshake,
   },
   {

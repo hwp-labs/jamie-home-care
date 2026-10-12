@@ -81,7 +81,7 @@ const GROUPS: ReadonlyArray<FaqGroup> = [
       {
         question: "What are your office hours?",
         answer:
-          `We are open Monday to Sunday, 9:00 to 17:00. You can reach us at ${APP.tel} or ${APP.email}.`,
+          `We are open ${APP.workHours}. You can reach us at ${APP.tel} or ${APP.email}.`,
       },
     ],
   },

@@ -22,11 +22,11 @@ export const metadata: Metadata = {
     type: "website",
     siteName: SITE_NAME,
     locale: "en_CA",
-    images: [{ url: "/images/banner.jpg", alt: "Jamie Home Care caregiver with a senior" }],
+    images: [{ url: "/images/banner-1.jpeg", alt: "Jamie Home Care caregiver with a senior" }],
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/images/banner.jpg"],
+    images: ["/images/banner-1.jpeg"],
   },
 };
 

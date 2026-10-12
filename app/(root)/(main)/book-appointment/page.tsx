@@ -74,7 +74,7 @@ export default function BookAppointmentPage() {
             </li>
             <li className="flex items-center gap-3">
               <Clock className="size-5 shrink-0 text-brand" aria-hidden />
-              Monday - Sunday, 9:00 - 17:00
+              {APP.workHours}
             </li>
           </ul>
         </div>

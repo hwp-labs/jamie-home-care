@@ -28,7 +28,7 @@ function ActionLink({ action, className }: { action: Action; className: string }
 
 export function Banner({
   title = "Ready to talk about care for your loved one?",
-  text = "Our team is available every day from 9:00 to 17:00.",
+  text = `Our team is available ${APP.workHours}`,
   primary = DEFAULT_PRIMARY,
   secondary = DEFAULT_SECONDARY,
 }: BannerProps) {

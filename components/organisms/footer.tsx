@@ -20,22 +20,22 @@ export function Footer() {
           </p>
           <ul className="mt-5 space-y-2 text-white/90">
             <li className="flex items-center gap-2">
-              <MapPin className="size-4" /> 
+              <MapPin className="size-4 min-w-4 -mt-4" /> 
               {APP.address}
             </li>
             <li className="flex items-center gap-2">
-              <Phone className="size-4" />
+              <Phone className="size-4 min-w-4" />
               <a href={APP.telHref} className="hover:underline">
                 {APP.tel}
               </a>
             </li>
             <li className="flex items-center gap-2">
-              <Mail className="size-4" />
+              <Mail className="size-4 min-w-4" />
               <a
                 href="mailto:info@jamiehomecare.ca"
                 className="hover:underline"
               >
-                info@jamiehomecare.ca
+                {APP.email}
               </a>
             </li>
           </ul>
@@ -85,7 +85,7 @@ export function Footer() {
       <div className="border-t border-white/15 py-5 text-sm text-white/70">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-6 sm:flex-row">
           <p>
-            © {new Date().getFullYear()} Jamie Home Care. All rights reserved.
+            &copy; {new Date().getFullYear()} {APP.name}. All rights reserved.
           </p>
           <Link
             href="/privacy-policy"

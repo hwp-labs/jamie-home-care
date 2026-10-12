@@ -33,7 +33,7 @@ type Service = {
 const SERVICES: ReadonlyArray<Service> = [
   {
     title: "Personal care",
-    summary: "Dignified, hands-on help with the routines of daily life.",
+    summary: "Hands-on support with activities of daily life.",
     includes: [
       "Bathing and grooming",
       "Dressing assistance",
@@ -54,8 +54,8 @@ const SERVICES: ReadonlyArray<Service> = [
     icon: Users,
   },
   {
-    title: "Meal preparation",
-    summary: "Nutritious, home-cooked meals shaped around each person.",
+    title: "Meal Prep & Feeding",
+    summary: "Light cooking and feeding.",
     includes: [
       "Menu planning",
       "Special diet support",
@@ -87,8 +87,19 @@ const SERVICES: ReadonlyArray<Service> = [
     icon: Stethoscope,
   },
   {
+    title: "Home Care & Cleaning",
+    summary: "House keeping.",
+    includes: [
+      "Initial assessment",
+      "Written care plan",
+      "Regular reviews",
+      "Plan updates as needs change",
+    ],
+    icon: ClipboardList,
+  },
+  {
     title: "Overnight care",
-    summary: "A caregiver nearby through the night for peace of mind.",
+    summary: "A caregiver nearby through the night.",
     includes: [
       "Night-time supervision",
       "Help with restroom trips",
@@ -99,7 +110,7 @@ const SERVICES: ReadonlyArray<Service> = [
   },
   {
     title: "Disability support",
-    summary: "Practical support that builds independence and confidence.",
+    summary: "Transfers and more.",
     includes: [
       "Daily living skills",
       "Accessible routines",
@@ -107,17 +118,6 @@ const SERVICES: ReadonlyArray<Service> = [
       "Family guidance",
     ],
     icon: Accessibility,
-  },
-  {
-    title: "Care planning",
-    summary: "A personal plan built with the person and their family.",
-    includes: [
-      "Initial assessment",
-      "Written care plan",
-      "Regular reviews",
-      "Plan updates as needs change",
-    ],
-    icon: ClipboardList,
   },
 ];
 
@@ -162,7 +162,7 @@ export default function ServicesPage() {
               <div>
                 <h3 className="text-xl font-semibold">{title}</h3>
                 <p className="mt-2 text-muted">{summary}</p>
-                <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+                <ul className="mt-4 grid gap-2 sm:grid-cols-2 hidden">
                   {includes.map((item) => (
                     <li key={item} className="flex items-start gap-2 text-base">
                       <CheckCircle2

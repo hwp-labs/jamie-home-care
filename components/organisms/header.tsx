@@ -23,7 +23,8 @@ export function Header() {
             </span>
           </div>
           <span className="flex items-center gap-2">
-            <Clock className="size-4" /> Monday - Sunday 9:00 - 17:00
+            <Clock className="size-4" /> 
+            {APP.workHours}
           </span>
         </div>
       </div>

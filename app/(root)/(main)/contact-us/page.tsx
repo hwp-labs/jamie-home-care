@@ -30,7 +30,7 @@ const DETAILS: ReadonlyArray<Detail> = [
     icon: Mail,
   },
   { label: "Address", value: ADDRESS, href: DIRECTIONS_URL, icon: MapPin },
-  { label: "Hours", value: "Monday - Sunday, 9:00 - 17:00", icon: Clock },
+  { label: "Hours", value: APP.workHours, icon: Clock },
 ];
 
 export default function ContactPage() {

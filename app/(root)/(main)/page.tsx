@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { APP } from "@/constants/APP";
 import { IMAGE } from "@/constants/IMAGE";
+import { Banner } from "@/components/organisms/banner";
 
 export const metadata: Metadata = {
   description:
@@ -56,8 +57,8 @@ const SERVICES: ReadonlyArray<Item> = [
     icon: Users,
   },
   {
-    title: "Meal Preparation",
-    text: "Nutritious, home-cooked meals tailored to each person.",
+    title: "Meal Prep & Feeding",
+    text: "Light cooking and feeding.",
     icon: Utensils,
   },
   {
@@ -71,8 +72,8 @@ const SERVICES: ReadonlyArray<Item> = [
     icon: Stethoscope,
   },
   {
-    title: "Care Planning",
-    text: "A personal plan built around each person and family.",
+    title: "Home Care & Cleaning",
+    text: "House keeping.",
     icon: ClipboardList,
   },
 ];
@@ -99,21 +100,18 @@ const POINTS: ReadonlyArray<string> = [
 export default function HomePage() {
   return (
     <>
-      {/* Hero */}
       <section className="bg-gradient-to-b from-brand-soft to-cream">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-16 lg:grid-cols-2 lg:py-24">
           <div>
-            <p className="font-bold tracking-widest text-brand uppercase">
-              Home care in Kitchener
-            </p>
             <h1 className="mt-4 text-4xl leading-tight font-extrabold text-brand-dark sm:text-5xl lg:text-6xl">
               Care You Can Trust!
             </h1>
             <p className="mt-6 max-w-xl text-xl text-muted">
-              We provide support for seniors and individuals with disabilities.
-              Trained caregivers, warm companionship, and round-the-clock
-              attention, so every senior in our care feels at home, not just
-              housed.
+              Stay in the home you love, with the support you need. Home is
+              where your memories, routines, and sense of belonging live. Jamie
+              Home Care supports aging in place through compassionate personal
+              care, companionship, and everyday assistance - helping you maintain
+              your independence and dignity.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
@@ -134,32 +132,6 @@ export default function HomePage() {
           <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-xl">
             {IMAGE.Home.Hero}
           </div>
-        </div>
-      </section>
-
-      {/* Trust */}
-      <section className="mx-auto -mt-2 max-w-7xl px-6 py-16">
-        <div className="max-w-2xl">
-          <h2 className="text-3xl font-extrabold text-brand-dark sm:text-4xl">
-            Care that feels like family, not a shift
-          </h2>
-          <p className="mt-4 text-muted">
-            Dependable, dignified care for the people you love most.
-          </p>
-        </div>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {TRUST.map(({ title, text, icon: Icon }) => (
-            <article
-              key={title}
-              className="rounded-2xl bg-white p-8 shadow-sm ring-1 ring-black/5"
-            >
-              <span className="inline-flex size-14 items-center justify-center rounded-full bg-brand-soft text-brand">
-                <Icon className="size-7" />
-              </span>
-              <h3 className="mt-5 text-xl font-bold">{title}</h3>
-              <p className="mt-2 text-muted">{text}</p>
-            </article>
-          ))}
         </div>
       </section>
 
@@ -251,31 +223,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="mx-auto max-w-7xl px-6 py-16">
-        <div className="rounded-3xl bg-brand-dark px-8 py-14 text-center text-white sm:px-16">
-          <h2 className="text-3xl font-extrabold sm:text-4xl">
-            Ready to talk about care for your loved one?
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-white/80">
-            Our team is available every day from 9:00 to 17:00.
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <Link
-              href="/book-appointment"
-              className="rounded-full bg-accent px-8 py-4 font-bold text-white transition hover:brightness-95"
-            >
-              Book Appointment
-            </Link>
-            <a
-              href={APP.telHref}
-              className="rounded-full border-2 border-white px-8 py-4 font-bold transition hover:bg-white hover:text-brand-dark"
-            >
-              Call {APP.tel}
-            </a>
-          </div>
-        </div>
-      </section>
+      <Banner />
     </>
   );
 }
