@@ -23,7 +23,7 @@ export const IMAGE = {
       />
     ),
   },
-  About: (
+  AboutUs: (
     <Image
       src="/images/banner-3.jpg"
       alt="Caregiver and senior sharing a conversation"

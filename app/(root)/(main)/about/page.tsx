@@ -85,7 +85,7 @@ export default function AboutPage() {
       {/* Welcome */}
       <section className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-16 lg:grid-cols-2">
         <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-brand-soft shadow-lg">
-          {IMAGE.About}
+          {IMAGE.AboutUs}
         </div>
         <div>
           {/* <p className="font-semibold uppercase tracking-wide text-accent">
