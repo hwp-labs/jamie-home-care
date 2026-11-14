@@ -12,8 +12,8 @@ export const APP = {
   website: "https://jamiehomecare.ca",
   domain: "jamiehomecare.ca",
   email: "info@jamiehomecare.ca",
-  tel: "+1 (548) 577-4216",
-  telHref: "tel:+15485774216",
+  tel: "(382)-885-4216",
+  telHref: "tel:+13828854216",
   address: "152 Stamson street. N2E 4H2, Kitchener, Ontario, Canada.",
   workHours: "Monday to Friday, 9.00 - 17.00",
   socials: {
