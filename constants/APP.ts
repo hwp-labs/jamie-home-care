@@ -1,5 +1,5 @@
 export const APP_NAME = "Jamie Home Health Care";
-export const DOMAIN = "jamiehomecare.ca";
+export const APP_DOMAIN = "jamiehomecare.ca";
 
 export const APP = {
   name: APP_NAME,
@@ -13,9 +13,11 @@ export const APP = {
     orange: "#d24e38",
     maroon: "#690b1d",
   },
-  website: `https://${DOMAIN}`,
-  domain: DOMAIN,
-  email: `info@${DOMAIN}`,
+  website: `https://${APP_DOMAIN}`,
+  domain: APP_DOMAIN,
+  email: `info@${APP_DOMAIN}`,
+  emailNoReply: `no-reply@${APP_DOMAIN}`,
+  emailMailto: `mailto:info@${APP_DOMAIN}`,
   tel: "(382)-885-4216",
   telHref: "tel:+13828854216",
   address: "152 Stamson Street. N2R OV2, Kitchener, Ontario, Canada.",

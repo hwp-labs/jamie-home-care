@@ -64,7 +64,7 @@ export const mockDefaultValues: FormDataType = {
 };
 
 export const mockBookedForOptions = [
-  { value: "1", label: "Self" },
+  { value: "1", label: "Myself" },
   { value: "2", label: "Family member or friend" },
 ];
 

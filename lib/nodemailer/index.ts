@@ -34,8 +34,8 @@ transporter
 export async function sendEmailAction(
   args: NodemailerRequestDto,
 ): Promise<NodemailerResponseDto> {
-  const to = args.incognito ? APP.emailCC : args.to;
-  const bcc = args.incognito ? args.to : process.env.SMTP_USER_BCC;
+  const to = args.incognito ? APP.emailNoReply : args.to;
+  const bcc = args.incognito ? args.to : process.env.SMTP_USER;
 
   try {
     const info = await transporter.sendMail({
@@ -67,7 +67,7 @@ export async function sendBatchEmailAction(
       const info = await transporter.sendMail({
         from: `${APP.name} <${APP.email}>`,
         bcc: batch,
-        to: process.env.SMTP_USER_BCC,
+        to: process.env.SMTP_USER,
         subject: args.subject,
         html: args.body,
       });

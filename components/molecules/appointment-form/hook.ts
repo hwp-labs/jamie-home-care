@@ -11,7 +11,7 @@ import {
   mockBookedForOptions,
   createFormSchema,
 } from "./schema";
-import { appointmentMail } from "@/lib/mails/appointment-mail";
+import { appointmentUserMail } from "@/lib/mails/appointment-mail";
 
 export const initialValues: FormDataType = MOCK.bookAppointment.formData
   ? mockDefaultValues
@@ -53,7 +53,7 @@ export function useAppointmentForm() {
     if (canSubmit) {
       setErrorBag({});
 
-      const { success, data, errors } = zodUtils.validateFormSchema(formSchema, formData);
+      const { success, errors } = zodUtils.validateFormSchema(formSchema, formData);
 
       if (!success) {
         setErrorBag(errors);
@@ -61,15 +61,17 @@ export function useAppointmentForm() {
       }
 
       if (MOCK.bookAppointment.action) {
+        mutateFormData({ _id: 0 });        
         await handleSendStub();
-        mutateFormData({ _id: 0 });
       } else {
+        mutateFormData({ _id: 1 });
+
+        const mail = appointmentUserMail({ ...formData, _id: 1 });
         await handleSend({
           to: formData.email,
-          subject: appointmentMail.subject_User,
-          body: appointmentMail.body_User(),
+          subject: mail.subject,
+          body: mail.body,
         });
-        mutateFormData({ _id: 1 });
       }
 
       setSuccess(true);

@@ -9,7 +9,7 @@ interface MockParams {
   skip?: number | boolean;
 }
 
-const devMode = 1;
+const devMode = 0;
 
 export const MOCK = {
   newsletter: {
@@ -24,7 +24,7 @@ export const MOCK = {
   },
   bookAppointment: {
     formData: devMode,
-    action: 1,
+    action: 0,
     router: 0,
   },
 } as const satisfies Record<string, MockParams>;
