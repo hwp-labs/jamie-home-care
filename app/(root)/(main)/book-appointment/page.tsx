@@ -40,7 +40,7 @@ export default function BookAppointmentPage() {
       />
 
       <section className="mx-auto grid max-w-7xl gap-12 px-6 py-16 lg:grid-cols-5">
-        <div className="hidden lg:col-span-2">
+        <div className="lg:col-span-2">
           <h2 className="text-brand-dark text-3xl font-bold">What happens next</h2>
           <ol className="mt-8 space-y-6">
             {STEPS.map((s, i) => (
