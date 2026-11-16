@@ -13,7 +13,7 @@ function Spinner({ className, ...props }: React.ComponentProps<"svg">) {
   );
 }
 
-function SpinnerBuffer({ className, ...props }: React.ComponentProps<"svg">) {
+function SpinnerAlt({ className, ...props }: React.ComponentProps<"svg">) {
   return (
     <LoaderIcon
       role="status"
@@ -24,4 +24,4 @@ function SpinnerBuffer({ className, ...props }: React.ComponentProps<"svg">) {
   );
 }
 
-export { Spinner, SpinnerBuffer };
+export { Spinner, SpinnerAlt };

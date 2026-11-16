@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { APP } from "@/constants/APP";
+import { Logo } from "../logo";
+import { CUR_YEAR } from "@/constants";
 
 const LINKS: ReadonlyArray<{ label: string; href: string }> = [
   { label: "Our Services", href: "/services" },
@@ -14,15 +16,17 @@ export function Footer() {
     <footer className="bg-black text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 md:grid-cols-3">
         <div>
-          <h3 className="text-2xl font-extrabold">Jamie Home Care</h3>
+          {/* <h3 className="text-2xl font-extrabold">Jamie Home Care</h3> */}
+          <Logo alt/>
           <p className="mt-3 text-white/80">
-            We provide support for seniors and individuals with disabilities.
+          {APP.address}
+            {/* We provide support for seniors and individuals with disabilities. */}
           </p>
           <ul className="mt-5 space-y-2 text-white/90">
-            <li className="flex items-center gap-2">
-              <MapPin className="size-4 min-w-4 -mt-4" /> 
+            {/* <li className="flex items-center gap-2">
+              <MapPin className="-mt-4 size-4 min-w-4" />
               {APP.address}
-            </li>
+            </li> */}
             <li className="flex items-center gap-2">
               <Phone className="size-4 min-w-4" />
               <a href={APP.telHref} className="hover:underline">
@@ -31,38 +35,32 @@ export function Footer() {
             </li>
             <li className="flex items-center gap-2">
               <Mail className="size-4 min-w-4" />
-              <a
-                href="mailto:info@jamiehomecare.ca"
-                className="hover:underline"
-              >
+              <a href="mailto:info@jamiehomecare.ca" className="hover:underline">
                 {APP.email}
               </a>
             </li>
           </ul>
         </div>
 
-        <div>
-          <h4 className="text-lg font-bold">Helpful links</h4>
-          <ul className="mt-4 space-y-2">
-            {LINKS.map((l) => (
-              <li key={l.href}>
-                <Link
-                  href={l.href}
-                  className="text-white/80 hover:text-white hover:underline"
-                >
-                  {l.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+        <div className="flex justify-center">
+          <div className="flex-cc_">
+            <h4 className="text-lg font-bold">Helpful links</h4>
+            <ul className="mt-4 space-y-2">
+              {LINKS.map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className="text-white/80 hover:text-white hover:underline">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         <div>
           <h4 className="text-lg font-bold">Newsletter</h4>
-          <p className="mt-4 text-white/80">
-            Stay up to date with our latest news.
-          </p>
-          <form className="mt-4 flex gap-2 ">
+          <p className="mt-4 text-white/80">Stay up to date with our latest news.</p>
+          <form className="mt-4 flex gap-2">
             <label htmlFor="newsletter-email" className="sr-only">
               Email address
             </label>
@@ -71,12 +69,9 @@ export function Footer() {
               type="email"
               required
               placeholder="Your email"
-              className="w-full rounded-full px-5 py-3 text-ink bg-white"
+              className="text-ink w-full rounded-full bg-white px-5 py-3"
             />
-            <button
-              type="submit"
-              className="rounded-full bg-accent px-6 py-3 font-bold"
-            >
+            <button type="submit" className="bg-accent rounded-full px-6 py-3 font-bold">
               Join
             </button>
           </form>
@@ -85,12 +80,9 @@ export function Footer() {
       <div className="border-t border-white/15 py-5 text-sm text-white/70">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-6 sm:flex-row">
           <p>
-            &copy; {new Date().getFullYear()} {APP.name}. All rights reserved.
+            &copy; {CUR_YEAR} {APP.name}. All rights reserved.
           </p>
-          <Link
-            href="/privacy-policy"
-            className="hover:text-white hover:underline"
-          >
+          <Link href="/privacy-policy" className="hover:text-white hover:underline">
             Privacy Policy
           </Link>
         </div>

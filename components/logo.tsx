@@ -1,17 +1,18 @@
+import Link from "next/link";
+import Image from "next/image";
 import { APP } from "@/constants/APP";
+import clsx from "clsx";
 
-export const Logo = () => {
+interface Props {
+  alt?: boolean;
+}
+export const Logo = ({ alt }: Props) => {
   return (
-    <figure className="flex-cx gap-3">
-      <a href="/" title="Home">
-        <img src="/android-chrome-192x192.png" alt="" className="size-[70px]" />
-      </a>
-      <figcaption>
-        <h1 className="font-heading text-2xl font-bold text-primary">
-          {APP.name}
-        </h1>
-        <p className="text-sm_ -mt-1 font-medium text-accent">{APP.title}</p>
-      </figcaption>
-    </figure>
+    <Link href="/" className="flex items-center gap-3">
+      <Image src="/android-chrome-192x192.png" alt="" width={44} height={44} />
+      <span className={clsx("text-xl font-extrabold", alt ? "text-white" : "text-brand-dark")}>
+        {APP.name}
+      </span>
+    </Link>
   );
 };

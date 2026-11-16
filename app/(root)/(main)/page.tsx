@@ -139,7 +139,7 @@ export default function HomePage() {
       <section className="bg-white py-16">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="font-bold tracking-widest text-brand uppercase">
+            <p className="font-bold tracking-widest text-brand uppercase hidden">
               What we offer
             </p>
             <h2 className="mt-3 text-3xl font-extrabold text-brand-dark sm:text-4xl">

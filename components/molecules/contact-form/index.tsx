@@ -3,7 +3,7 @@
 import { useActionState } from "react";
 import { CheckCircle2 } from "lucide-react";
 import { submitContact, type ContactState } from "./actions";
-import { BeforeSubmit } from "../before-submit";
+import { HoneypotField, SubmitPolicyLink } from "@/components/atoms/form-builder";
 
 const INITIAL_STATE: ContactState = { status: "idle" };
 
@@ -11,25 +11,17 @@ const INPUT =
   "mt-2 w-full rounded-xl border border-black/15 bg-white px-4 py-3 text-ink placeholder:text-muted/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand aria-[invalid=true]:border-red-600";
 
 export function ContactForm() {
-  const [state, formAction, pending] = useActionState(
-    submitContact,
-    INITIAL_STATE,
-  );
+  const [state, formAction, pending] = useActionState(submitContact, INITIAL_STATE);
 
   if (state.status === "success") {
     return (
-      <div
-        role="status"
-        className="mt-8 flex items-start gap-4 rounded-2xl bg-brand-soft p-6"
-      >
-        <CheckCircle2 className="mt-1 size-7 shrink-0 text-brand" aria-hidden />
+      <div role="status" className="bg-brand-soft mt-8 flex items-start gap-4 rounded-2xl p-6">
+        <CheckCircle2 className="text-brand mt-1 size-7 shrink-0" aria-hidden />
         <div>
-          <h3 className="text-xl font-semibold text-brand-dark">
+          <h3 className="text-brand-dark text-xl font-semibold">
             Thank you, your message is on its way
           </h3>
-          <p className="mt-1 text-muted">
-            We will get back to you as soon as we can.
-          </p>
+          <p className="text-muted mt-1">We will get back to you as soon as we can.</p>
         </div>
       </div>
     );
@@ -133,25 +125,12 @@ export function ContactForm() {
           </p>
         ) : null}
       </div>
-
-      {/* Honeypot: hidden from people and screen readers */}
-      <div className="absolute -left-[9999px]" aria-hidden>
-        <label htmlFor="website">Leave this field empty</label>
-        <input
-          id="website"
-          name="website"
-          type="text"
-          tabIndex={-1}
-          autoComplete="off"
-        />
-      </div>
-
-      <BeforeSubmit />
-      
+      <HoneypotField />
+      <SubmitPolicyLink />
       <button
         type="submit"
         disabled={pending}
-        className="inline-flex items-center justify-center rounded-full bg-accent px-8 py-4 font-semibold text-white transition hover:brightness-95 disabled:cursor-not-allowed disabled:opacity-60"
+        className="bg-accent inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold text-white transition hover:brightness-95 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {pending ? "Sending..." : "Send message"}
       </button>

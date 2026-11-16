@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Clock, MapPin, Phone } from "lucide-react";
-import { AppointmentForm } from "@/components/molecules/appointment-form";
+import { AppointmentForm } from "@/components/molecules/appointment-form/ui/form";
 import { Banner } from "@/components/organisms/banner";
 import { Hero } from "@/components/molecules/hero";
-import { getBookingWindow } from "@/components/molecules/appointment-form/utils";
 import { APP } from "@/constants/APP";
 
 export const metadata: Metadata = {
@@ -32,8 +31,6 @@ const STEPS: ReadonlyArray<{ title: string; text: string }> = [
 ];
 
 export default function BookAppointmentPage() {
-  const { min, max } = getBookingWindow();
-
   return (
     <>
       <Hero
@@ -43,49 +40,40 @@ export default function BookAppointmentPage() {
       />
 
       <section className="mx-auto grid max-w-7xl gap-12 px-6 py-16 lg:grid-cols-5">
-        <div className="lg:col-span-2">
-          <h2 className="text-3xl font-bold text-brand-dark">
-            What happens next
-          </h2>
+        <div className="hidden lg:col-span-2">
+          <h2 className="text-brand-dark text-3xl font-bold">What happens next</h2>
           <ol className="mt-8 space-y-6">
             {STEPS.map((s, i) => (
               <li key={s.title} className="flex gap-5">
-                <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-accent text-xl font-bold text-white">
+                <span className="bg-accent flex size-12 shrink-0 items-center justify-center rounded-full text-xl font-bold text-white">
                   {i + 1}
                 </span>
                 <div>
                   <h3 className="text-xl font-semibold">{s.title}</h3>
-                  <p className="mt-1 text-muted">{s.text}</p>
+                  <p className="text-muted mt-1">{s.text}</p>
                 </div>
               </li>
             ))}
           </ol>
 
-          <ul className="mt-10 space-y-3 rounded-2xl bg-brand-soft p-6 text-base">
+          <ul className="bg-brand-soft text-base_ mt-10 space-y-3 rounded-2xl p-6">
             <li className="flex items-center gap-3">
-              <Phone className="size-5 shrink-0 text-brand" aria-hidden />
+              <Phone className="text-brand size-5 shrink-0" aria-hidden />
               <a href={APP.telHref} className="hover:underline">
                 {APP.tel}
               </a>
             </li>
             <li className="flex items-center gap-3">
-              <MapPin className="size-5 shrink-0 text-brand" aria-hidden />
+              <MapPin className="text-brand size-5 shrink-0" aria-hidden />
               {APP.address}
             </li>
             <li className="flex items-center gap-3">
-              <Clock className="size-5 shrink-0 text-brand" aria-hidden />
+              <Clock className="text-brand size-5 shrink-0" aria-hidden />
               {APP.workHours}
             </li>
           </ul>
         </div>
-
-        <div className="rounded-[2rem] bg-white p-8 shadow-sm ring-1 ring-black/5 sm:p-10 lg:col-span-3">
-          <h2 className="text-2xl font-bold text-brand-dark">Your details</h2>
-          <p className="mt-2 mb-8 text-muted">
-            Fields marked with * are required.
-          </p>
-          <AppointmentForm minDate={min} maxDate={max} />
-        </div>
+        <AppointmentForm />
       </section>
 
       <Banner

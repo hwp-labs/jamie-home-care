@@ -27,8 +27,8 @@ function ActionLink({ action, className }: { action: Action; className: string }
 }
 
 export function Banner({
-  title = "Ready to talk about care for your loved one?",
-  text = `Our team is available ${APP.workHours}`,
+  title = "Ready to talk about care?",
+  text = `Let's talk about the right care for you and your family`,
   primary = DEFAULT_PRIMARY,
   secondary = DEFAULT_SECONDARY,
 }: BannerProps) {
@@ -37,7 +37,7 @@ export function Banner({
       <div className="rounded-[2rem] bg-brand-dark px-8 py-14 text-center text-white sm:px-16">
         <h2 className="text-3xl font-bold sm:text-4xl">{title}</h2>
         <p className="mx-auto mt-4 max-w-2xl text-white/80">{text}</p>
-        <div className="mt-8 flex flex-wrap justify-center gap-4">
+        <div className="mt-8 flex flex-wrap justify-center gap-5">
           <ActionLink
             action={primary}
             className="rounded-full bg-accent px-8 py-4 font-semibold text-white transition hover:brightness-95"
