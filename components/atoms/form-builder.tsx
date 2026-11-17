@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { PropsWithChildren } from "react";
 import Link from "next/link";
 import { SpinnerAlt } from "../shadcn/ui/spinner";
@@ -41,13 +42,16 @@ export const CustomFieldLabel = ({ name, label, ...props }: CustomFieldLabel) =>
 interface CustomFieldError {
   id: string;
   error?: string;
+  className?: string;
 }
 
-export const CustomFieldError = ({ id, error }: CustomFieldError) => {
+export const CustomFieldError = ({ id, error, className }: CustomFieldError) => {
   if (!error) return;
 
+  const errorId = id.endsWith("-error") ? id : `${id}-error`;
+
   return (
-    <p id={id} className="mt-1 text-base text-red-600">
+    <p id={errorId} className={clsx("mt-1 text-base text-red-600", className)}>
       {error}
     </p>
   );
@@ -63,7 +67,7 @@ export const HoneypotField = () => {
   );
 };
 
-export const SubmitPolicyLink = () => {
+export const SubmitButtonTerms = () => {
   return (
     <p className="text-muted text-base">
       By submitting this form you agree to our{" "}
@@ -79,15 +83,24 @@ interface SubmitButtonProps extends PropsWithChildren {
   onClick?: () => void;
   disabled?: boolean;
   loading?: boolean;
+  success?: boolean;
+  className?: string;
 }
 
-export const SubmitButton = ({ children, onClick, disabled, loading }: SubmitButtonProps) => {
+export const SubmitButton = ({
+  children,
+  onClick,
+  disabled,
+  loading,
+  success,
+  className = "submit-button",
+}: SubmitButtonProps) => {
   return (
     <button
       type="button"
       onClick={onClick}
-      disabled={disabled || loading}
-      className="bg-accent inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold text-white transition hover:brightness-95 disabled:cursor-not-allowed disabled:opacity-60 gap-1.5"
+      disabled={disabled}
+      className={clsx("base-button", className, success && "bg-green-600")}
     >
       {loading && <SpinnerAlt />}
       {children}

@@ -13,8 +13,8 @@ import {
   Sparkles,
   Users,
   Accessibility,
-UserCheck,
-CalendarClock,
+  UserCheck,
+  CalendarClock,
   type LucideIcon,
 } from "lucide-react";
 import { Hero } from "@/components/molecules/hero";
@@ -97,8 +97,15 @@ export default function AboutPage() {
 
       {/* Welcome */}
       <section className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-16 lg:grid-cols-2">
-        <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-brand-soft shadow-lg">
-          {IMAGE.AboutUs}
+        <div className="bg-brand-soft relative aspect-[4/3] overflow-hidden rounded-[2rem] shadow-lg">
+          <Image
+            src="/images/banner-3.jpg"
+            alt="Caregiver and senior sharing a conversation"
+            fill
+            priority
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            className="object-cover"
+          />
         </div>
         <div>
           {/* <p className="font-semibold uppercase tracking-wide text-accent">
@@ -108,17 +115,15 @@ export default function AboutPage() {
             Care You Can Trust
           </h2> */}
           <p className="text-muted_ mt-6 text-2xl leading-[40px]">
-            At Jamie Home Care, we believe that aging and receiving daily
-            support should never mean giving up independence, comfort, or
-            dignity. Based in the heart of the Kitchener-Waterloo-Cambridge
-            (KWC) region, we provide compassionate, individualized home care
-            services designed to support seniors and individuals with
-            disabilities right where they feel safest: in the comfort of their
-            own homes.
+            At Jamie Home Care, we believe that aging and receiving daily support should never mean
+            giving up independence, comfort, or dignity. Based in the heart of the
+            Kitchener-Waterloo-Cambridge (KWC) region, we provide compassionate, individualized home
+            care services designed to support seniors and individuals with disabilities right where
+            they feel safest: in the comfort of their own homes.
           </p>
           <Link
             href="/contact-us"
-            className="mt-8 inline-flex items-center rounded-full bg-brand px-8 py-4 font-semibold text-white transition hover:bg-brand-dark"
+            className="bg-brand hover:bg-brand-dark mt-8 inline-flex items-center rounded-full px-8 py-4 font-semibold text-white transition"
           >
             Contact Us
           </Link>
@@ -128,15 +133,12 @@ export default function AboutPage() {
       {/* Mission */}
       <section className="bg-brand-soft py-16">
         <div className="mx-auto max-w-3xl px-6 text-center">
-          <Sparkles className="mx-auto size-10 text-accent" aria-hidden />
-          <h2 className="mt-5 text-3xl font-bold text-brand-dark sm:text-4xl">
-            Our Mission
-          </h2>
-          <p className="mt-4 text-lg text-muted">
-            To empower seniors and individuals with disabilities to live rich,
-            dignified, and independent lives at home, while giving families and
-            primary caregivers complete peace of mind, free from stress,
-            burnout, and guilt.
+          <Sparkles className="text-accent mx-auto size-10" aria-hidden />
+          <h2 className="text-brand-dark mt-5 text-3xl font-bold sm:text-4xl">Our Mission</h2>
+          <p className="text-muted mt-4 text-lg">
+            To empower seniors and individuals with disabilities to live rich, dignified, and
+            independent lives at home, while giving families and primary caregivers complete peace
+            of mind, free from stress, burnout, and guilt.
           </p>
         </div>
       </section>
@@ -144,7 +146,7 @@ export default function AboutPage() {
       {/* Why choose us */}
       <section className="mx-auto max-w-7xl px-6 py-16">
         <div className="max-w-2xl">
-          <h2 className="text-3xl font-bold text-brand-dark sm:text-4xl">
+          <h2 className="text-brand-dark text-3xl font-bold sm:text-4xl">
             Why Choose Jamie Home Care?
           </h2>
         </div>
@@ -154,12 +156,12 @@ export default function AboutPage() {
               key={title}
               className="flex gap-5 rounded-2xl bg-white p-8 shadow-sm ring-1 ring-black/5"
             >
-              <span className="flex size-14 shrink-0 items-center justify-center rounded-full bg-brand-soft">
-                <Icon className="size-7 text-brand" aria-hidden />
+              <span className="bg-brand-soft flex size-14 shrink-0 items-center justify-center rounded-full">
+                <Icon className="text-brand size-7" aria-hidden />
               </span>
               <div>
                 <h3 className="text-xl font-semibold">{title}</h3>
-                <p className="mt-2 text-muted">{text}</p>
+                <p className="text-muted mt-2">{text}</p>
               </div>
             </article>
           ))}
@@ -169,22 +171,20 @@ export default function AboutPage() {
       {/* Core values */}
       <section className="bg-white py-16">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-3xl font-bold text-brand-dark sm:text-4xl">
-            Our Core Values
-          </h2>
+          <h2 className="text-brand-dark text-3xl font-bold sm:text-4xl">Our Core Values</h2>
           <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {VALUES.map(({ title, text, icon: Icon }) => (
-              <article key={title} className="border-l-4 border-brand pl-6">
-                <Icon className="size-9 text-brand" aria-hidden />
+              <article key={title} className="border-brand border-l-4 pl-6">
+                <Icon className="text-brand size-9" aria-hidden />
                 <h3 className="mt-4 text-xl font-semibold">{title}</h3>
-                <p className="mt-2 text-muted">{text}</p>
+                <p className="text-muted mt-2">{text}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <Banner />
+      <CallToAction />
     </>
   );
 }

@@ -2,6 +2,8 @@ import { z } from "zod";
 import { CUR_DATE, CUR_TIME } from "@/constants";
 import { OptionType } from "@/types";
 
+export type FormDataType = z.infer<ReturnType<typeof createFormSchema>>;
+
 export const createFormSchema = (
   bookedForOptions: OptionType[],
   bookedServiceOptions: OptionType[],
@@ -16,7 +18,7 @@ export const createFormSchema = (
       .refine((v) => bookedForValues.has(v), "Select who the appointment is for."),
     firstName: z.string().trim().min(1, "First name is required.").max(50),
     lastName: z.string().trim().min(1, "Last name is required.").max(50),
-    email: z.string().trim().email("Enter a valid email address."),
+    email: z.email("Enter a valid email address."),
     tel: z
       .string()
       .trim()
@@ -38,8 +40,6 @@ export const createFormSchema = (
     _id: z.number().optional(),
   });
 };
-
-export type FormDataType = z.infer<ReturnType<typeof createFormSchema>>;
 
 export const defaultValues: FormDataType = {
   bookedFor: "",

@@ -1,53 +1,23 @@
+import { MailIcon, MapPinIcon, PhoneIcon } from "lucide-react";
 import { APP } from "@/constants/APP";
-import Link from "next/link";
 
-type Action = { label: string; href: string };
-
-type BannerProps = {
-  title?: string;
-  text?: string;
-  primary?: Action;
-  secondary?: Action;
-};
-
-const DEFAULT_PRIMARY: Action = { label: "Book Appointment", href: "/book-appointment" };
-const DEFAULT_SECONDARY: Action = { label: `Call ${APP.tel}`, href: APP.telHref };
-
-function ActionLink({ action, className }: { action: Action; className: string }) {
-  const isNative = action.href.startsWith("mailto:") || action.href.startsWith("tel:");
-  return isNative ? (
-    <a href={action.href} className={className}>
-      {action.label}
-    </a>
-  ) : (
-    <Link href={action.href} className={className}>
-      {action.label}
-    </Link>
-  );
-}
-
-export function Banner({
-  title = "Ready to talk about care?",
-  text = `Let's talk about the right care for you and your family`,
-  primary = DEFAULT_PRIMARY,
-  secondary = DEFAULT_SECONDARY,
-}: BannerProps) {
+export function Banner() {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-16">
-      <div className="rounded-[2rem] bg-brand-dark px-8 py-14 text-center text-white sm:px-16">
-        <h2 className="text-3xl font-bold sm:text-4xl">{title}</h2>
-        <p className="mx-auto mt-4 max-w-2xl text-white/80">{text}</p>
-        <div className="mt-8 flex flex-wrap justify-center gap-5">
-          <ActionLink
-            action={primary}
-            className="rounded-full bg-accent px-8 py-4 font-semibold text-white transition hover:brightness-95"
-          />
-          <ActionLink
-            action={secondary}
-            className="rounded-full border-2 border-white px-8 py-4 font-semibold transition hover:bg-white hover:text-brand-dark"
-          />
+    <div className="bg-brand-dark hidden text-sm text-white md:block">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2">
+        <div className="flex flex-row gap-4">
+          <span className="flex items-center gap-2">
+            <PhoneIcon className="size-4" /> {APP.tel}
+          </span>
+          <span className="flex items-center gap-2">
+            <MailIcon className="size-4" /> {APP.email}
+          </span>
         </div>
+        <span className="flex items-center gap-2">
+          <MapPinIcon className="size-4" />
+          {APP.address}
+        </span>
       </div>
-    </section>
+    </div>
   );
 }

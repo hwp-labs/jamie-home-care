@@ -3,7 +3,7 @@
 import { useActionState } from "react";
 import { CheckCircle2 } from "lucide-react";
 import { submitContact, type ContactState } from "./actions";
-import { HoneypotField, SubmitPolicyLink } from "@/components/atoms/form-builder";
+import { HoneypotField, SubmitButtonTerms } from "@/components/atoms/form-builder";
 
 const INITIAL_STATE: ContactState = { status: "idle" };
 
@@ -126,7 +126,7 @@ export function ContactForm() {
         ) : null}
       </div>
       <HoneypotField />
-      <SubmitPolicyLink />
+      <SubmitButtonTerms />
       <button
         type="submit"
         disabled={pending}

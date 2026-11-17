@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next";
+import { APP } from "@/constants/APP";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Jamie Home Care",
-    short_name: "Jamie Care",
+    name: APP.name,
+    short_name: APP.shortName,
     start_url: "/",
     display: "standalone",
     background_color: "#f6ece2",

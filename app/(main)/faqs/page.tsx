@@ -50,8 +50,7 @@ const GROUPS: ReadonlyArray<FaqGroup> = [
       },
       {
         question: "Can the care plan change over time?",
-        answer:
-          "Absolutely. We review each plan regularly and update it whenever needs change.",
+        answer: "Absolutely. We review each plan regularly and update it whenever needs change.",
       },
     ],
   },
@@ -80,8 +79,7 @@ const GROUPS: ReadonlyArray<FaqGroup> = [
       },
       {
         question: "What are your office hours?",
-        answer:
-          `We are open ${APP.workHours}. You can reach us at ${APP.tel} or ${APP.email}.`,
+        answer: `We are open ${APP.workHours}. You can reach us at ${APP.tel} or ${APP.email}.`,
       },
     ],
   },
@@ -115,23 +113,21 @@ export default function FaqsPage() {
         <div className="space-y-14">
           {GROUPS.map((group) => (
             <div key={group.heading}>
-              <h2 className="text-2xl font-bold text-brand-dark sm:text-3xl">
-                {group.heading}
-              </h2>
+              <h2 className="text-brand-dark text-2xl font-bold sm:text-3xl">{group.heading}</h2>
               <div className="mt-6 space-y-4">
                 {group.items.map((item) => (
                   <details
                     key={item.question}
-                    className="group rounded-2xl bg-white ring-1 ring-black/5 transition open:ring-brand"
+                    className="group open:ring-brand rounded-2xl bg-white ring-1 ring-black/5 transition"
                   >
-                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-6 text-lg font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand [&::-webkit-details-marker]:hidden">
+                    <summary className="focus-visible:outline-brand flex cursor-pointer list-none items-center justify-between gap-4 p-6 text-lg font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 [&::-webkit-details-marker]:hidden">
                       {item.question}
                       <ChevronDown
-                        className="size-6 shrink-0 text-brand transition-transform group-open:rotate-180"
+                        className="text-brand size-6 shrink-0 transition-transform group-open:rotate-180"
                         aria-hidden
                       />
                     </summary>
-                    <p className="px-6 pb-6 text-muted">{item.answer}</p>
+                    <p className="text-muted px-6 pb-6">{item.answer}</p>
                   </details>
                 ))}
               </div>
@@ -140,7 +136,7 @@ export default function FaqsPage() {
         </div>
       </section>
 
-      <Banner
+      <CallToAction
         title="Still have a question?"
         text="We are happy to talk it through. Reach out any day from 9:00 to 17:00."
         primary={{ label: "Contact Us", href: "/contact-us" }}

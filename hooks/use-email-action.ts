@@ -14,7 +14,7 @@ export function useEmailAction() {
     next?.();
 
     setSent(true);
-    await sleep(1);
+    await sleep(1.5);
     setSent(false);
   };
 

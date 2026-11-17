@@ -5,15 +5,15 @@ import {
   FormContainer,
   HoneypotField,
   SubmitButton,
-  SubmitPolicyLink,
+  SubmitButtonTerms,
 } from "@/components/atoms/form-builder";
 import { FieldInputRadioGroup } from "@/components/atoms/field-input-radio";
 import { FieldInput } from "@/components/atoms/field-input";
 import { FieldSelect } from "@/components/atoms/field-select";
 import { FieldTextarea } from "@/components/atoms/field-textarea";
 //
-import { useAppointmentForm } from "../hook";
-import { AppointmentSummary } from "./summary";
+import { AppointmentSummary } from "./ui/summary";
+import { useAppointmentForm } from "./hook";
 
 export function AppointmentForm() {
   const {
@@ -120,7 +120,7 @@ export function AppointmentForm() {
             error={errorBag.notes}
           />
           <HoneypotField />
-          <SubmitPolicyLink />
+          <SubmitButtonTerms />
           <SubmitButton onClick={handleSubmit} disabled={!canSubmit} loading={submitting}>
             {submitting ? "Booking..." : "Book appointment"}
           </SubmitButton>

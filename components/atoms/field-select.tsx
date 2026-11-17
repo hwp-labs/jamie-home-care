@@ -30,7 +30,7 @@ export const FieldSelect = ({
         autoComplete={`new-${name}`}
         aria-invalid={Boolean(error)}
         aria-describedby={error ? errorId : undefined}
-        className="field-input"
+        className="base-input field-input"
       >
         <option value="" className="text-muted/60!">
           {optionLabel}

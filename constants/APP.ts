@@ -8,6 +8,8 @@ export const APP = {
   abbr: "JHHC",
   title: "Care You Can Trust!",
   titleLong: `${APP_NAME} - Care You Can Trust!`,
+  description:
+    "Trained caregivers, warm companionship and round-the-clock support for seniors and individuals with disabilities in Kitchener, Ontario.",
   colors: {
     cream: "#f6ece2",
     orange: "#d24e38",

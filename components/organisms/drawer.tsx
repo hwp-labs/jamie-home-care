@@ -1,10 +1,11 @@
 "use client";
 
+import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu } from "lucide-react";
+import { MenuIcon } from "lucide-react";
 import { MENU } from "@/constants/MENU";
-import clsx from "clsx";
+import { PATH } from "@/constants/PATH";
 
 export const Drawer = () => {
   const pathname = usePathname();
@@ -15,7 +16,7 @@ export const Drawer = () => {
         aria-label="Open menu"
         className="flex cursor-pointer list-none items-center rounded-md border p-2 [&::-webkit-details-marker]:hidden"
       >
-        <Menu className="size-6" />
+        <MenuIcon className="size-6" />
       </summary>
       <ul className="absolute right-0 mt-3 w-64 space-y-1 rounded-xl border bg-white p-3 shadow-lg">
         {MENU.map((item) => {
@@ -41,7 +42,7 @@ export const Drawer = () => {
         })}
         <li>
           <Link
-            href="/book-appointment"
+            href={PATH.bookAppointment}
             className="mt-2 block rounded-full bg-accent px-3 py-3 text-center font-bold text-white"
           >
             Book Appointment

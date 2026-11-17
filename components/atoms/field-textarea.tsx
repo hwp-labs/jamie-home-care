@@ -27,7 +27,7 @@ export const FieldTextarea = ({
         autoComplete={`new-${name}`}
         aria-invalid={Boolean(error)}
         aria-describedby={error ? errorId : undefined}
-        className="field-input"
+        className="base-input field-input"
       />
       <CustomFieldError id={errorId} error={error} />
     </div>

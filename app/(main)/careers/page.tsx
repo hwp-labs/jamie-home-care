@@ -61,8 +61,7 @@ const ROLES: ReadonlyArray<Role> = [
     title: "Personal Support Worker",
     type: "Full-time / Part-time",
     location: "Kitchener, ON",
-    summary:
-      "Provide hands-on personal care and daily living support with dignity and respect.",
+    summary: "Provide hands-on personal care and daily living support with dignity and respect.",
     requirements: [
       "PSW certificate or equivalent",
       "Experience with seniors or disabilities",
@@ -73,20 +72,14 @@ const ROLES: ReadonlyArray<Role> = [
     title: "Companion Caregiver",
     type: "Part-time",
     location: "Kitchener, ON",
-    summary:
-      "Offer friendly company, light meal preparation and gentle activities.",
-    requirements: [
-      "Warm, patient personality",
-      "Reliable and punctual",
-      "Clear police check",
-    ],
+    summary: "Offer friendly company, light meal preparation and gentle activities.",
+    requirements: ["Warm, patient personality", "Reliable and punctual", "Clear police check"],
   },
   {
     title: "Overnight Caregiver",
     type: "Overnight shifts",
     location: "Kitchener, ON",
-    summary:
-      "Provide calm, attentive supervision and comfort through the night.",
+    summary: "Provide calm, attentive supervision and comfort through the night.",
     requirements: [
       "Previous caregiving experience",
       "Comfortable working overnight",
@@ -109,9 +102,7 @@ const STEPS: ReadonlyArray<{ title: string; text: string }> = [
 ];
 
 function applyHref(role?: string): string {
-  const subject = encodeURIComponent(
-    role ? `Application: ${role}` : "Career enquiry",
-  );
+  const subject = encodeURIComponent(role ? `Application: ${role}` : "Career enquiry");
   return `mailto:${APPLY_EMAIL}?subject=${subject}`;
 }
 
@@ -127,19 +118,17 @@ export default function CareersPage() {
       {/* Why join */}
       <section className="mx-auto max-w-7xl px-6 py-16">
         <div className="max-w-2xl">
-          <h2 className="text-3xl font-bold text-brand-dark sm:text-4xl">
-            Why work with us
-          </h2>
-          <p className="mt-4 text-muted">
+          <h2 className="text-brand-dark text-3xl font-bold sm:text-4xl">Why work with us</h2>
+          <p className="text-muted mt-4">
             We look after our caregivers so they can look after our clients.
           </p>
         </div>
         <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {PERKS.map(({ title, text, icon: Icon }) => (
-            <article key={title} className="border-l-4 border-brand pl-6">
-              <Icon className="size-9 text-brand" aria-hidden />
+            <article key={title} className="border-brand border-l-4 pl-6">
+              <Icon className="text-brand size-9" aria-hidden />
               <h3 className="mt-4 text-xl font-semibold">{title}</h3>
-              <p className="mt-2 text-muted">{text}</p>
+              <p className="text-muted mt-2">{text}</p>
             </article>
           ))}
         </div>
@@ -149,12 +138,9 @@ export default function CareersPage() {
       <section className="bg-white py-16">
         <div className="mx-auto max-w-7xl px-6">
           <div className="max-w-2xl">
-            <h2 className="text-3xl font-bold text-brand-dark sm:text-4xl">
-              Open positions
-            </h2>
-            <p className="mt-4 text-muted">
-              Do not see a perfect fit? Send us your details anyway and we will
-              keep them on file.
+            <h2 className="text-brand-dark text-3xl font-bold sm:text-4xl">Open positions</h2>
+            <p className="text-muted mt-4">
+              Do not see a perfect fit? Send us your details anyway and we will keep them on file.
             </p>
           </div>
 
@@ -162,11 +148,11 @@ export default function CareersPage() {
             {ROLES.map((role) => (
               <article
                 key={role.title}
-                className="bg-surface flex flex-col gap-6 rounded-2xl p-8 ring-1 ring-black/5 transition hover:ring-brand lg:flex-row lg:items-center lg:justify-between"
+                className="bg-surface hover:ring-brand flex flex-col gap-6 rounded-2xl p-8 ring-1 ring-black/5 transition lg:flex-row lg:items-center lg:justify-between"
               >
                 <div className="max-w-2xl">
                   <h3 className="text-2xl font-semibold">{role.title}</h3>
-                  <p className="mt-3 flex flex-wrap items-center gap-x-6 gap-y-2 text-base text-muted">
+                  <p className="text-muted mt-3 flex flex-wrap items-center gap-x-6 gap-y-2 text-base">
                     <span className="inline-flex items-center gap-2">
                       <Briefcase className="size-4" aria-hidden /> {role.type}
                     </span>
@@ -178,10 +164,7 @@ export default function CareersPage() {
                   <ul className="mt-4 space-y-2">
                     {role.requirements.map((r) => (
                       <li key={r} className="flex items-start gap-2 text-base">
-                        <CheckCircle2
-                          className="mt-0.5 size-5 shrink-0 text-brand"
-                          aria-hidden
-                        />
+                        <CheckCircle2 className="text-brand mt-0.5 size-5 shrink-0" aria-hidden />
                         <span>{r}</span>
                       </li>
                     ))}
@@ -189,7 +172,7 @@ export default function CareersPage() {
                 </div>
                 <a
                   href={applyHref(role.title)}
-                  className="inline-flex shrink-0 items-center justify-center rounded-full bg-accent px-8 py-4 font-semibold text-white transition hover:brightness-95"
+                  className="bg-accent inline-flex shrink-0 items-center justify-center rounded-full px-8 py-4 font-semibold text-white transition hover:brightness-95"
                 >
                   Apply for this role
                 </a>
@@ -203,20 +186,18 @@ export default function CareersPage() {
       <section className="bg-brand-soft py-16">
         <div className="mx-auto max-w-7xl px-6">
           <div className="flex items-center gap-3">
-            <SmilePlus className="size-9 text-accent" aria-hidden />
-            <h2 className="text-3xl font-bold text-brand-dark sm:text-4xl">
-              How hiring works
-            </h2>
+            <SmilePlus className="text-accent size-9" aria-hidden />
+            <h2 className="text-brand-dark text-3xl font-bold sm:text-4xl">How hiring works</h2>
           </div>
           <ol className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {STEPS.map((s, i) => (
               <li key={s.title} className="flex gap-5">
-                <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-accent text-xl font-bold text-white">
+                <span className="bg-accent flex size-12 shrink-0 items-center justify-center rounded-full text-xl font-bold text-white">
                   {i + 1}
                 </span>
                 <div>
                   <h3 className="text-xl font-semibold">{s.title}</h3>
-                  <p className="mt-2 text-muted">{s.text}</p>
+                  <p className="text-muted mt-2">{s.text}</p>
                 </div>
               </li>
             ))}
@@ -224,7 +205,7 @@ export default function CareersPage() {
         </div>
       </section>
 
-      <Banner
+      <CallToAction
         title="Ready to join our team?"
         text={`Send your resume to ${APPLY_EMAIL} and tell us which role interests you.`}
         primary={{ label: "Email your resume", href: applyHref() }}
