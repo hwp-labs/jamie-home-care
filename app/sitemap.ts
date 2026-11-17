@@ -1,8 +1,9 @@
 import type { MetadataRoute } from "next";
-import { SITE_PATHS, SITE_URL } from "@/constants/SITE";
+import { APP } from "@/constants/APP";
+import { PATHS } from "@/constants/PATH";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return SITE_PATHS.map((path) => ({
-    url: `${SITE_URL}${path === "/" ? "" : path}`,
+  return PATHS.map((path) => ({
+    url: `${APP.website}${path === "/" ? "" : path}`,
   }));
 }

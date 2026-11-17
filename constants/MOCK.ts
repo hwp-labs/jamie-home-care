@@ -19,7 +19,7 @@ export const MOCK = {
   },
   contactUs: {
     formData: devMode,
-    action: 1,
+    action: 0,
     router: 0,
   },
   bookAppointment: {

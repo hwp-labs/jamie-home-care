@@ -1,5 +1,7 @@
 export const APP_NAME = "Jamie Home Health Care";
 export const APP_DOMAIN = "jamiehomecare.ca";
+export const APP_ADDRESS = "152 Stamson Street. N2R OV2, Kitchener, Ontario, Canada.";
+export const APP_DIRECTIONS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(APP_ADDRESS)}`;
 
 export const APP = {
   name: APP_NAME,
@@ -22,7 +24,7 @@ export const APP = {
   emailNoReply: `no-reply@${APP_DOMAIN}`,
   tel: "(382)-885-4216",
   telHref: "tel:+13828854216",
-  address: "152 Stamson Street. N2R OV2, Kitchener, Ontario, Canada.",
+  address: APP_ADDRESS,
   workHours: "Monday to Friday, 9.00 - 17.00",
   socials: {
     fb: "https://facebook.com/profile.php?id=61594527770465",
@@ -30,8 +32,8 @@ export const APP = {
     x: "",
     yt: "",
   },
-  startDate:'2026-08-20',
-  launchDate:'2026-10-05',
+  startDate: "2026-08-20",
+  launchDate: "2026-10-05",
 } as const;
 
 export const COPY = {

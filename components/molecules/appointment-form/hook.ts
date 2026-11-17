@@ -52,7 +52,7 @@ export function useAppointmentForm() {
     if (canSubmit) {
       setErrorBag({});
 
-      const { success, errors } = zodUtils.validateFormSchema(formSchema, formData);
+      const { success, data, errors } = zodUtils.validateFormSchema(formSchema, formData);
 
       if (!success) {
         setErrorBag(errors);
@@ -65,7 +65,7 @@ export function useAppointmentForm() {
       } else {
         mutateFormData({ _id: 1 });
 
-        const mail = appointmentUserMail({ ...formData, _id: 1 });
+        const mail = appointmentUserMail({ ...data, _id: 1 });
         await handleSend({
           to: formData.email,
           subject: mail.subject,

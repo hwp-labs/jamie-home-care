@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { Clock, Mail, MapPin, Phone, type LucideIcon } from "lucide-react";
-import { ContactForm } from "@/components/molecules/contact-form";
-import { APP } from "@/constants/APP";
 import { Jumbotron } from "@/components/organisms/jumbotron";
+import { GetInTouch } from "@/components/organisms/get-in-touch";
+import { ContactForm } from "@/components/molecules/contact-form";
 import { PATH } from "@/constants/PATH";
 
 export const metadata: Metadata = {
@@ -10,29 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: PATH.contactUs },
 };
 
-const ADDRESS = APP.address;
-const DIRECTIONS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ADDRESS)}`;
-
-type Detail = { label: string; value: string; href?: string; icon: LucideIcon };
-
-const DETAILS: ReadonlyArray<Detail> = [
-  {
-    label: "Phone",
-    value: APP.tel,
-    href: APP.telHref,
-    icon: Phone,
-  },
-  {
-    label: "Email",
-    value: "info@jamiehomecare.ca",
-    href: "mailto:info@jamiehomecare.ca",
-    icon: Mail,
-  },
-  { label: "Address", value: ADDRESS, href: DIRECTIONS_URL, icon: MapPin },
-  { label: "Hours", value: APP.workHours, icon: Clock },
-];
-
-export default function ContactPage() {
+export default function ContactUsPage() {
   return (
     <>
       <Jumbotron
@@ -42,47 +19,8 @@ export default function ContactPage() {
       />
 
       <section className="mx-auto grid max-w-7xl gap-12 px-6 py-16 lg:grid-cols-5">
-        <div className="lg:col-span-2">
-          <h2 className="text-brand-dark text-3xl font-bold">Get in touch</h2>
-          <p className="text-muted mt-4">
-            Call, email or send us a message. We reply as soon as we can.
-          </p>
-
-          <ul className="mt-8 space-y-4">
-            {DETAILS.map(({ label, value, href, icon: Icon }) => (
-              <li
-                key={label}
-                className="flex items-start gap-4 rounded-2xl bg-white p-5 ring-1 ring-black/5"
-              >
-                <span className="bg-brand flex size-12 shrink-0 items-center justify-center rounded-xl text-white">
-                  <Icon className="size-6" aria-hidden />
-                </span>
-                <div>
-                  <p className="text-base font-semibold">{label}</p>
-                  {href ? (
-                    <a
-                      href={href}
-                      {...(href.startsWith("http")
-                        ? { target: "_blank", rel: "noopener noreferrer" }
-                        : {})}
-                      className="text-muted hover:text-brand underline-offset-4 hover:underline"
-                    >
-                      {value}
-                    </a>
-                  ) : (
-                    <p className="text-muted">{value}</p>
-                  )}
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="rounded-[2rem] bg-white p-8 shadow-sm ring-1 ring-black/5 sm:p-10 lg:col-span-3">
-          <h2 className="text-brand-dark text-2xl font-bold">Send us a message</h2>
-          <p className="text-muted mt-2">Fields marked with * are required.</p>
-          <ContactForm />
-        </div>
+        <GetInTouch />
+        <ContactForm />
       </section>
     </>
   );

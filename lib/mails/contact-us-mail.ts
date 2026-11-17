@@ -1,26 +1,27 @@
 import { APP } from "@/constants/APP";
+import { FormDataType } from "@/components/molecules/contact-form/schema";
+//
 import { mailUtils } from "./utils";
 
-interface ContactedUsMailBodyDto {
-  name: string;
-  email: string;
-  message: string;
-}
+export interface Params extends FormDataType {}
 
-export const contactUsMail = {
-  subject: `Thank You For Contacting Us`,
-  body: (args: ContactedUsMailBodyDto) => `
-${mailUtils.cover}
-Hello ${args.name},
-<p></p>
-Thank you for contacting ${APP.name}. 
-<p></p>
-We have received your message and will get back to you within 1-2 business days with more details to share about your event.
-<p></p>
-Message received:<br/>
----<br/>
-${args.message}<br/>
----
-${mailUtils.regards}
-`,
+export const contactUsMail = (p: Params) => {
+  return {
+    subject: `We received your message`,
+    body: `
+      ${mailUtils.header}
+      Hi ${p.firstName},
+      <p></p>
+      Thank you for contacting ${APP.name}. 
+      We have received your message and a member of our team will get back to you shortly.
+      <p></p>
+      Your message: <br/>
+      ${p.message}
+      <p></p>
+      If your question is urgent, call us at ${APP.tel}.
+      ${mailUtils.regards}
+      ${mailUtils.footer}
+      ${mailUtils.unsubscribe}     
+    `,
+  };
 };
