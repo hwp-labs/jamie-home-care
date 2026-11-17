@@ -4,10 +4,11 @@ import { WhyJoin } from "@/components/molecules/why-join";
 import { Vacancies } from "@/components/molecules/vacancies";
 import { HiringProcess } from "@/components/molecules/hiring-process";
 import { CallToAction } from "@/components/organisms/call-to-action";
+import { PATH } from "@/constants/PATH";
 
 export const metadata: Metadata = {
   title: "Careers",
-  alternates: { canonical: "/careers" },
+  alternates: { canonical: PATH.careers },
 };
 
 export default function CareersPage() {

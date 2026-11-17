@@ -71,7 +71,7 @@ export function AboutHero() {
           they feel safest: in the comfort of their own homes.
         </p>
         <Link
-          href={PATH.contact}
+          href={PATH.contactUs}
           className="bg-brand hover:bg-brand-dark mt-8 inline-flex items-center rounded-full px-8 py-4 font-semibold text-white transition"
         >
           Contact Us

@@ -3,10 +3,11 @@ import { Jumbotron } from "@/components/organisms/jumbotron";
 import { WhatHappensNext } from "@/components/molecules/what-happens-next";
 import { AppointmentForm } from "@/components/molecules/appointment-form";
 import { CallToAction } from "@/components/organisms/call-to-action";
+import { PATH } from "@/constants/PATH";
 
 export const metadata: Metadata = {
   title: "Book Appointment",
-  alternates: { canonical: "/book-appointment" },
+  alternates: { canonical: PATH.bookAppointment },
 };
 
 export default function BookAppointmentPage() {

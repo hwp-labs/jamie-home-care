@@ -5,7 +5,7 @@ export const PATH = {
   services: "/services",
   careers: "/careers",
   faqs: "/faqs",
-  contact: "/contact-us",
+  contactUs: "/contact-us",
   bookAppointment: "/book-appointment",
   privacyPolicy: "/privacy-policy",
 } as const;

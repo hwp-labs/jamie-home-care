@@ -30,6 +30,8 @@ export const APP = {
     x: "",
     yt: "",
   },
+  startDate:'2026-08-20',
+  launchDate:'2026-10-05',
 } as const;
 
 export const COPY = {

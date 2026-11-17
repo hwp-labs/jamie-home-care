@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import { Jumbotron } from "@/components/organisms/jumbotron";
 import { FAQ_JSON_LD, Faqs } from "@/components/molecules/faqs";
 import { CallToAction } from "@/components/organisms/call-to-action";
+import { PATH } from "@/constants/PATH";
 
 export const metadata: Metadata = {
   title: "FAQs",
-  alternates: { canonical: "/faqs" },
+  alternates: { canonical: PATH.faqs },
 };
 
 export default function FaqsPage() {

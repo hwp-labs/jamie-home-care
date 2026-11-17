@@ -6,10 +6,11 @@ import { AboutWhyUs } from "@/components/molecules/about-why-us";
 import { CoreValues } from "@/components/molecules/core-values";
 import { CallToAction } from "@/components/organisms/call-to-action";
 import { APP } from "@/constants/APP";
+import { PATH } from "@/constants/PATH";
 
 export const metadata: Metadata = {
   title: "About Us",
-  alternates: { canonical: "/about" },
+  alternates: { canonical: PATH.about },
 };
 
 export default function AboutPage() {

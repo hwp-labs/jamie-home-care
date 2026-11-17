@@ -4,10 +4,11 @@ import { HomeCareServices } from "@/components/molecules/home-care-services";
 import { HealthCareServices } from "@/components/molecules/health-care-services";
 import { WhoWeSupport } from "@/components/molecules/who-we-support";
 import { CallToAction } from "@/components/organisms/call-to-action";
+import { PATH } from "@/constants/PATH";
 
 export const metadata: Metadata = {
   title: "Our Services",
-  alternates: { canonical: "/services" },
+  alternates: { canonical: PATH.services },
 };
 
 export default function ServicesPage() {

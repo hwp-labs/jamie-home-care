@@ -3,13 +3,14 @@ import { Clock, Mail, MapPin, Phone, type LucideIcon } from "lucide-react";
 import { ContactForm } from "@/components/molecules/contact-form";
 import { APP } from "@/constants/APP";
 import { Jumbotron } from "@/components/organisms/jumbotron";
+import { PATH } from "@/constants/PATH";
 
 export const metadata: Metadata = {
   title: "Contact Us",
-  alternates: { canonical: "/contact-us" },
+  alternates: { canonical: PATH.contactUs },
 };
 
-const ADDRESS = APP.address
+const ADDRESS = APP.address;
 const DIRECTIONS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ADDRESS)}`;
 
 type Detail = { label: string; value: string; href?: string; icon: LucideIcon };
@@ -42,8 +43,8 @@ export default function ContactPage() {
 
       <section className="mx-auto grid max-w-7xl gap-12 px-6 py-16 lg:grid-cols-5">
         <div className="lg:col-span-2">
-          <h2 className="text-3xl font-bold text-brand-dark">Get in touch</h2>
-          <p className="mt-4 text-muted">
+          <h2 className="text-brand-dark text-3xl font-bold">Get in touch</h2>
+          <p className="text-muted mt-4">
             Call, email or send us a message. We reply as soon as we can.
           </p>
 
@@ -53,7 +54,7 @@ export default function ContactPage() {
                 key={label}
                 className="flex items-start gap-4 rounded-2xl bg-white p-5 ring-1 ring-black/5"
               >
-                <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-brand text-white">
+                <span className="bg-brand flex size-12 shrink-0 items-center justify-center rounded-xl text-white">
                   <Icon className="size-6" aria-hidden />
                 </span>
                 <div>
@@ -64,7 +65,7 @@ export default function ContactPage() {
                       {...(href.startsWith("http")
                         ? { target: "_blank", rel: "noopener noreferrer" }
                         : {})}
-                      className="text-muted underline-offset-4 hover:text-brand hover:underline"
+                      className="text-muted hover:text-brand underline-offset-4 hover:underline"
                     >
                       {value}
                     </a>
@@ -78,10 +79,8 @@ export default function ContactPage() {
         </div>
 
         <div className="rounded-[2rem] bg-white p-8 shadow-sm ring-1 ring-black/5 sm:p-10 lg:col-span-3">
-          <h2 className="text-2xl font-bold text-brand-dark">
-            Send us a message
-          </h2>
-          <p className="mt-2 text-muted">Fields marked with * are required.</p>
+          <h2 className="text-brand-dark text-2xl font-bold">Send us a message</h2>
+          <p className="text-muted mt-2">Fields marked with * are required.</p>
           <ContactForm />
         </div>
       </section>

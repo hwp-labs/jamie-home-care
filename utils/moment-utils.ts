@@ -51,10 +51,14 @@ const verbose = (dt?: InputType) => fmt("ddd, D MMM YYYY | h:mm A", dt);
 // 1 Apr 2026
 const shortDate = (dt?: InputType) => fmt("D MMM YYYY", dt);
 
+// August 20, 2026
+const longDate = (dt?: InputType) => fmt("MMMM D, YYYY", dt);
+
 export const momentUtils = {
   fmt,
   isOngoing,
   isAfterDay,
   verbose,
   shortDate,
+  longDate
 };

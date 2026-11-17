@@ -1,0 +1,186 @@
+import { APP } from "@/constants/APP";
+
+export const data = [
+  {
+    id: "overview",
+    title: "Overview",
+    bodyRichText: `
+      <p>
+        ${APP.name} (&quot;we&quot;, &quot;us&quot;) provides support for seniors and
+        individuals with disabilities in Kitchener, Ontario. We respect your privacy and are
+        committed to protecting the personal information you share with us.
+      </p>
+      <p>
+        This policy explains what we collect through this website, why we collect it, and the
+        choices you have. By using our website or submitting a form, you agree to the practices
+        described here.
+      </p>
+    `,
+  },
+  {
+    id: "collect",
+    title: "Information we collect",
+    bodyRichText: `
+      <p>We collect only what we need to respond to you and to arrange care. This may include:</p>
+      <ul>
+        <li>Your name, email address and phone number</li>
+        <li>The service, date and time you request when booking an appointment</li>
+        <li>Whether you are booking for yourself or for someone else</li>
+        <li>Any message or notes you choose to write in our forms</li>
+        <li>Basic technical data, such as browser type and pages visited, when you use our site</li>
+      </ul>
+      <p>
+        Please do not include detailed medical information in our website forms. We will ask for
+        what we need directly, in a conversation, once we are in touch.
+      </p>
+    `,
+  },
+  {
+    id: "use",
+    title: "How we use your information",
+    bodyRichText: `
+      <p>We use your information to:</p>
+      <ul>
+        <li>Reply to your questions and requests</li>
+        <li>Confirm, schedule and manage appointments</li>
+        <li>Assess care needs and prepare a care plan with you and your family</li>
+        <li>Recruit staff, when you apply for a position</li>
+        <li>Improve our website and services</li>
+        <li>Meet our legal and professional obligations</li>
+      </ul>
+      <p>We do not sell your personal information.</p>
+    `,
+  },
+  {
+    id: "consent",
+    title: "Your consent",
+    bodyRichText: `
+      <p>
+        We collect, use and share personal information with your knowledge and consent, except
+        where the law allows or requires otherwise. If you provide information about another
+        person, such as a family member, you confirm you are entitled to do so.
+      </p>
+      <p>
+        You may withdraw your consent at any time, subject to legal or contractual limits, by
+        contacting us. Withdrawing consent may mean we can no longer provide some services.
+      </p>
+    `,
+  },
+  {
+    id: "sharing",
+    title: "Who we share it with",
+    bodyRichText: `
+      <p>We only share personal information when necessary and only with:</p>
+      <ul>
+        <li>Staff and caregivers who need it to provide care or handle your request</li>
+        <li>
+          Service providers that help us run our website, email and systems, under confidentiality
+          obligations
+        </li>
+        <li>
+          Healthcare professionals or emergency services, when needed to protect someone&apos;s
+          safety
+        </li>
+        <li>Authorities, where we are required to by law</li>
+      </ul>
+    `,
+  },
+  {
+    id: "security",
+    title: "How we protect it",
+    bodyRichText: `
+      <p>
+        We use reasonable administrative, technical and physical safeguards to protect personal
+        information against loss, theft and unauthorized access. Access is limited to people who
+        need it for their work.
+      </p>
+      <p>
+        No method of transmission or storage is completely secure, so we cannot guarantee absolute
+        security. If a breach creates a real risk of significant harm, we will notify affected
+        people and the authorities as the law requires.
+      </p>
+    `,
+  },
+  {
+    id: "retention",
+    title: "How long we keep it",
+    bodyRichText: `
+      <p>
+        We keep personal information only as long as needed for the purposes described above or as
+        required by law. When it is no longer needed, we securely delete or anonymize it.
+      </p>
+    `,
+  },
+  {
+    id: "rights",
+    title: "Your rights",
+    bodyRichText: `
+      <p>You may ask us to:</p>
+      <ul>
+        <li>Tell you what personal information we hold about you</li>
+        <li>Give you access to it</li>
+        <li>Correct anything that is inaccurate or incomplete</li>
+        <li>Delete it, where we are not required to keep it</li>
+      </ul>
+      <p>
+        Contact us using the details below. We may need to confirm your identity first, and we
+        will respond within a reasonable time.
+      </p>
+    `,
+  },
+  {
+    id: "cookies",
+    title: "Cookies and analytics",
+    bodyRichText: `
+      <p>
+        Our website may use essential cookies and basic analytics to keep the site working and to
+        understand how it is used. We do not use this data to identify you personally. You can
+        control cookies through your browser settings.
+      </p>
+    `,
+  },
+  {
+    id: "links",
+    title: "Links to other sites",
+    bodyRichText: `
+      <p>
+        Our website may link to other sites, such as social media pages or maps. We are not
+        responsible for their privacy practices, so please read their policies.
+      </p>
+    `,
+  },
+  {
+    id: "changes",
+    title: "Changes to this policy",
+    bodyRichText: `
+      <p>
+        We may update this policy from time to time. The &quot;last updated&quot; date at the top
+        shows when it last changed. Significant changes will be highlighted on this page.
+      </p>
+    `,
+  },
+  {
+    id: "contact",
+    title: "Contact us and complaints",
+    bodyRichText: `
+      <p>Questions about this policy, or requests about your information, can be sent to:</p>
+      <address class="not-italic">
+        <strong>${APP.name}</strong>
+        <br />
+        ${APP.address}
+        <br />
+        Phone: <a href="${APP.telHref}">${APP.tel}</a>
+        <br />
+        Email: <a href="mailto:${APP.emailInfo}">${APP.emailInfo}</a>
+      </address>
+      <p>
+        If we have not resolved your concern, you may contact the
+        <a href="https://www.priv.gc.ca" target="_blank" rel="noopener noreferrer">
+          Office of the Privacy Commissioner of Canada</a>. For concerns about personal health
+        information in Ontario, you may also contact the
+        <a href="https://www.ipc.on.ca" target="_blank" rel="noopener noreferrer">
+          Information and Privacy Commissioner of Ontario</a>.
+      </p>
+    `,
+  },
+];
