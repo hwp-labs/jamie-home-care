@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
+import { Jumbotron } from "@/components/organisms/jumbotron";
 import { WhatHappensNext } from "@/components/molecules/what-happens-next";
 import { AppointmentForm } from "@/components/molecules/appointment-form";
 import { CallToAction } from "@/components/organisms/call-to-action";
-import { TitleCard } from "@/components/organisms/title-card";
 
 export const metadata: Metadata = {
   title: "Book Appointment",
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function BookAppointmentPage() {
   return (
     <>
-      <TitleCard
+      <Jumbotron
         current="Book Appointment"
         title="Book an Appointment"
         description="Tell us what suits you and we will confirm shortly."

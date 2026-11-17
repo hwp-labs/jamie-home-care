@@ -7,7 +7,7 @@ type PageHeroProps = {
   current: string;
 };
 
-export function TitleCard({ title, description, current }: PageHeroProps) {
+export function Jumbotron({ title, description, current }: PageHeroProps) {
   return (
     <section className="bg-brand-dark text-white">
       <div className="mx-auto max-w-7xl px-6 py-14 lg:py-20">
