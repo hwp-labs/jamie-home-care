@@ -14,18 +14,22 @@ export const appointmentUserMail = (p: Params) => {
   return {
     subject: `We received your appointment request ${referenceNo}`,
     body: `
+      ${mailUtils.header}
       Hi ${p.firstName},
       <p></p>
-      Thank you for contacting ${APP.name}. We have received your appointment request and a member of our team will call or email you shortly to confirm.
+      Thank you for contacting ${APP.name}. 
+      We have received your appointment request and a member of our team will call or email you shortly to confirm.
       <p></p>
-      Your request details:<br/>
-      <b>Appointment For:</b> ${p._bookedForText}<br/>
-      <b>Appointment Service:</b> ${p._bookedServiceText}<br/>
-      <b>Appointment Schedule:</b> ${schedule}<br/>
-      <b>Appointment Notes:</b> ${p.notes}
+      Appointment details: <br/>
+      <b>Booked For:</b> ${p._bookedForText} <br/>
+      <b>Service Type:</b> ${p._bookedServiceText} <br/>
+      <b>Date/Time:</b> ${schedule} <br/>
+      <b>Notes:</b> ${p.notes}
       <p></p>
-      If you need to change your request or have any questions, call us at ${APP.tel}, quoting your reference number <b>${referenceNo}</b>.
+      If you need to change your request or have any questions, 
+      call us at ${APP.tel}, quoting your reference number <b>${referenceNo}</b>.
       ${mailUtils.regards}
+      ${mailUtils.footer}
     `,
   };
 };

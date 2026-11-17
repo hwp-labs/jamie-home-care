@@ -31,7 +31,7 @@ export const WhatHappensNext = () => {
           </li>
         ))}
       </ol>
-      <ul className="bg-brand-soft text-base_ mt-10 space-y-3 rounded-2xl p-6">
+      <ul className="bg-brand-soft text-base_ mt-10 hidden space-y-3 rounded-2xl p-6">
         <li className="flex items-center gap-3">
           <PhoneIcon className="text-brand size-5 shrink-0" aria-hidden />
           <a href={APP.telHref} className="hover:underline">

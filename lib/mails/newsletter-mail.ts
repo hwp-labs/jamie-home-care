@@ -1,7 +1,5 @@
 import { APP } from "@/constants/APP";
-import { FormDataType } from "@/components/molecules/appointment-form/schema";
-import { appointmentFormUtils } from "@/components/molecules/appointment-form/utils";
-import { momentUtils } from "@/utils/moment-utils";
+import { PATH } from "@/constants/PATH";
 //
 import { mailUtils } from "./utils";
 
@@ -9,12 +7,22 @@ export interface Params {}
 
 export const newsletterMail = () => {
   return {
-    subject: `Thank You For Subscribing`,
+    subject: `Thank you for subscribing to our newsletter`,
     body: `
-      Thank you for subscribing to ${APP.name} Newsletters. 
+      ${mailUtils.header}
+      Thank you for subscribing to the ${APP.name} newsletter. 
+      You are now on our list to receive practical care tips, helpful articles and updates for families caring for a loved one at home.
       <p></p>
-      You are now on our mailing list for event planning tips, event organizer checklists, and ideas to make your events memorable.
+      What to expect: <br/>
+      - Care tips for seniors and individuals with disabilities <br/>
+      - News and updates from our team <br/>
+      - Helpful resources, delivered periodically
+      <p></p>      
+      If you have a question about care for someone you love, we are happy to talk it through with no pressure. 
+      Call us at ${APP.tel}, or book an appointment at ${APP.website}${PATH.bookAppointment}.
       ${mailUtils.regards}
+      ${mailUtils.footer}
+      ${mailUtils.unsubscribe}     
     `,
   };
 };

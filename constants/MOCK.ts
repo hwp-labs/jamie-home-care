@@ -14,7 +14,7 @@ const devMode = 1;
 export const MOCK = {
   newsletter: {
     formData: devMode,
-    action: 1,
+    action: 0,
     router: 0,
   },
   contactUs: {

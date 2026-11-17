@@ -12,10 +12,10 @@ export const META = {
     type: "website",
     siteName: APP.name,
     locale: "en_CA",
-    images: [{ url: "/social-preview.jpeg", alt: "" }],
+    images: [{ url: "/social-preview.png", alt: "" }],
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/social-preview.jpeg"],
+    images: ["/social-preview.png"],
   },
 };

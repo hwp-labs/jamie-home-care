@@ -1,23 +1,34 @@
 import { APP } from "@/constants/APP";
 
-const cover = `<a href="${APP.website}">
-  <img src="${APP.website}/images/cover.png" alt="" width="100%" />
-</a>
-<p></p>`;
+const header = `
+  <p>
+    <img src="${APP.website}/images/email-header.png" alt="" width="100%" />
+  </p>
+`;
+
+const footer = `
+  <p style="margin-top:50px;">
+    <img src="${APP.website}/images/email-footer.png" alt="" width="100%" />
+  </p>
+`;
 
 const regards = `
-  <p style="margin-top:25px;"></p>
-  Warm regards,<br/>
-  ${APP.name},<br/>
-  ${APP.address}</br>
-  ${APP.tel}
-  <p></p>
-  <a href="${APP.website}">
-    <img src="${APP.website}/icon.png" alt="" width="48" />
-  </a>
+  <p style="margin-top:25px;">
+    Warm regards,<br/>
+    ${APP.abbr} Care Team
+  </p>
+`;
+
+const unsubscribe = `
+  <p style="margin-top:50px; font-size:10px; text-align:center;">
+    You are receiving this email because you subscribed to our newsletter. 
+    <a href="${APP.website}">Unsubscribe</a>
+  </p>
 `;
 
 export const mailUtils = {
-  cover,
+  header,
+  footer,
   regards,
+  unsubscribe,
 };
