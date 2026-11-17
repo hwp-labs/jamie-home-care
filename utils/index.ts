@@ -42,3 +42,10 @@ export const getSixDigitCode = () => {
 
   return pick(LETTERS, 3) + pick(DIGITS, 3);
 };
+
+export const mailto = (email: string, subject?: string) => {
+  if (!subject) return `mailto:${email}`;
+
+  const subjectSafe = encodeURIComponent(subject);
+  return `mailto:${email}?subject=${subjectSafe}`;
+};

@@ -9,24 +9,24 @@ export const WhatHappensNext = () => {
         {[
           {
             title: "Choose a time",
-            text: "Pick the service, date and time that suit you.",
+            summary: "Pick the service, date and time that suit you.",
           },
           {
             title: "We confirm",
-            text: "We call or email you to confirm the appointment.",
+            summary: "We call or email you to confirm the appointment.",
           },
           {
             title: "We meet",
-            text: "We talk through your needs and start building a care plan.",
+            summary: "We talk through your needs and start building a care plan.",
           },
-        ].map((s, i) => (
-          <li key={s.title} className="flex gap-5">
+        ].map((item, i) => (
+          <li key={i} className="flex gap-5">
             <span className="bg-accent flex size-12 shrink-0 items-center justify-center rounded-full text-xl font-bold text-white">
               {i + 1}
             </span>
             <div>
-              <h3 className="text-xl font-semibold">{s.title}</h3>
-              <p className="text-muted mt-1">{s.text}</p>
+              <h3 className="text-xl font-semibold">{item.title}</h3>
+              <p className="text-muted mt-1">{item.summary}</p>
             </div>
           </li>
         ))}

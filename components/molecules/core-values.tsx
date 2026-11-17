@@ -9,29 +9,29 @@ export const CoreValues = () => {
           {[
             {
               title: "Trust",
-              text: "We show up on time, communicate openly, and uphold the highest standards of professional safety.",
-              icon: ShieldCheckIcon,
+              summary: "We show up on time, communicate openly, and uphold the highest standards of professional safety.",
+              Icon: ShieldCheckIcon,
             },
             {
               title: "Dignity",
-              text: "We honor every client's personal preferences, routines, and autonomy during every task.",
-              icon: ScaleIcon,
+              summary: "We honor every client's personal preferences, routines, and autonomy during every task.",
+              Icon: ScaleIcon,
             },
             {
               title: "Compassion",
-              text: "We don't just complete tasks; we listen, build relationships, and bring warmth into every home.",
-              icon: HeartHandshakeIcon,
+              summary: "We don't just complete tasks; we listen, build relationships, and bring warmth into every home.",
+              Icon: HeartHandshakeIcon,
             },
             {
               title: "Peace of Mind",
-              text: "We lift the weight off family members' shoulders so they can rest knowing their loved one is in safe hands.",
-              icon: SmileIcon,
+              summary: "We lift the weight off family members' shoulders so they can rest knowing their loved one is in safe hands.",
+              Icon: SmileIcon,
             },
-          ].map(({ title, text, icon: Icon }) => (
-            <article key={title} className="border-brand border-l-4 pl-6">
+          ].map(({ Icon, ...item },i) => (
+            <article key={i} className="border-brand border-l-4 pl-6">
               <Icon className="text-brand size-9" aria-hidden />
-              <h3 className="mt-4 text-xl font-semibold">{title}</h3>
-              <p className="text-muted mt-2">{text}</p>
+              <h3 className="mt-4 text-xl font-semibold">{item.title}</h3>
+              <p className="text-muted mt-2">{item.summary}</p>
             </article>
           ))}
         </div>

@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
 import { Clock, Mail, MapPin, Phone, type LucideIcon } from "lucide-react";
 import { ContactForm } from "@/components/molecules/contact-form";
-import { Hero } from "@/components/molecules/hero";
 import { APP } from "@/constants/APP";
+import { Jumbotron } from "@/components/organisms/jumbotron";
 
 export const metadata: Metadata = {
-  title: "Contact Us - Jamie Home Care",
-  description:
-    `Get in touch with Jamie Home Care in Kitchener, Ontario. Call ${APP.tel}, email us or send a message any day, 9:00 to 17:00.`,
+  title: "Contact Us",
   alternates: { canonical: "/contact-us" },
 };
 
@@ -36,7 +34,7 @@ const DETAILS: ReadonlyArray<Detail> = [
 export default function ContactPage() {
   return (
     <>
-      <Hero
+      <Jumbotron
         current="Contact Us"
         title="Contact Us"
         description="Questions about care for your loved one? We are here to help."

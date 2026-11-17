@@ -4,7 +4,6 @@ import { ArrowRightIcon } from "lucide-react";
 import { APP } from "@/constants/APP";
 import { PATH } from "@/constants/PATH";
 
-export function Hero() {}
 export function HomeHero() {
   return (
     <section className="from-brand-soft to-cream bg-gradient-to-b">
