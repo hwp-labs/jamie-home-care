@@ -7,7 +7,7 @@ const header = `
 `;
 
 const footer = `
-  <p style="margin-top:50px;">
+  <p>
     <img src="${APP.website}/images/email-footer.png" alt="" width="100%" />
   </p>
 `;
@@ -20,7 +20,7 @@ const regards = `
 `;
 
 const unsubscribe = `
-  <p style="margin-top:50px; font-size:10px; text-align:center;">
+  <p style="font-size:10px; text-align:center;">
     You are receiving this email because you subscribed to our newsletter. 
     <a href="${APP.website}">Unsubscribe</a>
   </p>

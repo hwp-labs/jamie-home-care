@@ -14,7 +14,6 @@ export const appointmentUserMail = (p: Params) => {
   return {
     subject: `We received your appointment request ${referenceNo}`,
     body: `
-      ${mailUtils.header}
       Hi ${p.firstName},
       <p></p>
       Thank you for contacting ${APP.name}. 

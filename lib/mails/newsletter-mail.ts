@@ -9,7 +9,6 @@ export const newsletterMail = () => {
   return {
     subject: `Thank you for subscribing to our newsletter`,
     body: `
-      ${mailUtils.header}
       Thank you for subscribing to the ${APP.name} newsletter. 
       You are now on our list to receive practical care tips, helpful articles and updates for families caring for a loved one at home.
       <p></p>

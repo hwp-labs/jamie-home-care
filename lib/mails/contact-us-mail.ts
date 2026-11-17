@@ -9,7 +9,6 @@ export const contactUsMail = (p: Params) => {
   return {
     subject: `We received your message`,
     body: `
-      ${mailUtils.header}
       Hi ${p.firstName},
       <p></p>
       Thank you for contacting ${APP.name}. 
