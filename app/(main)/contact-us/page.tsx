@@ -17,7 +17,6 @@ export default function ContactUsPage() {
         title="Contact Us"
         description="Questions about care for your loved one? We are here to help."
       />
-
       <section className="mx-auto grid max-w-7xl gap-12 px-6 py-16 lg:grid-cols-5">
         <GetInTouch />
         <ContactForm />

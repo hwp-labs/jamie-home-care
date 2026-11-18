@@ -4,7 +4,7 @@ export const HomeCareServices = () => {
   return (
     <section className="mx-auto max-w-7xl px-6 py-16">
       <div className="max-w-2xl">
-        <h2 className="text-brand-dark text-3xl font-bold sm:text-4xl">Our Health Care Services</h2>
+        <h2 className="text-brand-dark text-3xl font-bold sm:text-4xl">Our Home Care Services</h2>
         <p className="text-muted mt-4">
           Every plan is different. We combine the services below to fit your loved one.
         </p>

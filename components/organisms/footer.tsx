@@ -28,7 +28,7 @@ export function Footer() {
             </li>
           </ul>
         </div>
-        <div className="flex justify-center">
+        <div className="flex lg:justify-center">
           <div className="flex-cc_">
             <h4 className="text-lg font-bold">Helpful links</h4>
             <ul className="mt-4 space-y-2">

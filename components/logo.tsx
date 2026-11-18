@@ -13,7 +13,7 @@ export const Logo = ({ variant = "default" }: Props) => {
       <Image src="/logo.png" alt="" width={44} height={44} priority loading="eager" />
       <span
         className={clsx(
-          "text-brand-dark text-xl font-extrabold",
+          "text-brand-dark text-lg lg:text-xl font-extrabold",
           variant === "footer" && "text-white",
         )}
       >
